@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Week Planner
+Welcome to Week Planner, a simple web application built with Next.js, Tailwind CSS, and DaisyUI that allows you to organize your week effectively. Whether you're a student trying to manage your assignments, a professional planning your workweek, or just someone looking to stay organized, Week Planner has got you covered.
 
-## Getting Started
+Features
+Easy-to-Use Interface: Week Planner provides an intuitive and user-friendly interface for managing your weekly schedule.
 
-First, run the development server:
+Drag and Drop: You can easily drag and drop tasks and events to rearrange your schedule, making it flexible and adaptable.
 
-```bash
+Customizable Events: Organize your tasks and events to better manage your time.
+
+Responsive Design: Week Planner is responsive, so you can access and use it on any device, whether it's a desktop, tablet, or mobile phone.
+
+Installation
+To run Week Planner locally on your machine, follow these steps:
+
+Clone the repository:
+git clone https://github.com/yourusername/week-planner.git
+
+Install the dependencies:
+npm install
+
+Start the development server:
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open your browser and go to http://localhost:3000 to use Week Planner.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Usage
+Create an account or log in if you already have one.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Add your tasks and events to the planner.
 
-## Learn More
+Drag and drop items to arrange them according to your preferences.
 
-To learn more about Next.js, take a look at the following resources:
+Use the customizable categories to keep your schedule organized.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Stay productive and on top of your weekly goals!
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Technologies Used
+TypeScript - Language
+Next.js - React framework for server-rendered React applications.
+Tailwind CSS - A utility-first CSS framework for rapidly building custom designs.
+DaisyUI - A UI library for Tailwind CSS that provides a set of beautiful and accessible components.
+Contributing
+We welcome contributions from the community. If you'd like to contribute to Week Planner, please follow our contributing guidelines.
 
-## Deploy on Vercel
+Special thanks to our contributors and users for their valuable feedback and support.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Contact
+If you have any questions or suggestions, feel free to reach out to us at bertopolo91@gmail.com.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Happy planning! 📅
