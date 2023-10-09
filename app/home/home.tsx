@@ -1,3 +1,4 @@
+"use client" // temporary
 import { v4 as uuidv4 } from "uuid"
 import Link from "next/link"
 
@@ -70,7 +71,7 @@ const Home = () => {
           <Link href="#link">Full calendar</Link>
         </div>
         <div className="flex-none">
-          <button className="btn btn-square btn-ghost" onClick={() => setWantWekends(!wantWekends)}>
+          <button className="btn btn-square btn-ghost" onClick={() => !wantWekends}>
             Weekends On/Off
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-5 h-5 stroke-current">
               <path
@@ -91,147 +92,38 @@ const Home = () => {
         {/* </Row> */}
       </div>
 
-      <div>
-        <Col>
-          <Card style={{ width: "18rem" }}>
-            <Card.Body>
-              <Card.Title className="bg-success">Monday - monthDay </Card.Title>
-              {/*  / task.date, cant be cause it dont know WHICH task */}
+      <div className="columns-auto">
+        <div className="card w-96 bg-base-100 shadow-xl">
+          <figure>
+            <img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" />
+          </figure>
+          <div className="card-body">
+            <h2 className="card-title">Monday - monthDay</h2>
+            <div>
+              {/* sort by start time */}
+              {tasks &&
+                tasks.map((task) => {
+                  return (
+                    <div key={task.id}>
+                      {task.dayOfWeek === "Mon" && (
+                        <div>
+                          <p>
+                            {/* <b className="pointer" onClick={() => setIsDescription(!isDescription)}> */}
+                              {task.title}
+                            </b>
+                          </p>
+                          {isDescription && <p>{task.description}</p>}
+                        </div>
+                      )}
+                    </div>
+                  )
+                })}
+            </div>
+          </div>
+        </div>
 
-              <div>
-                {/* sort by start time */}
-                {tasks &&
-                  tasks.map((task) => {
-                    return (
-                      <div key={task.id}>
-                        {task.dayOfWeek === "Mon" && (
-                          <div>
-                            <p>
-                              <b className="pointer" onClick={() => setIsDescription(!isDescription)}>
-                                {task.title}
-                              </b>
-                            </p>
-                            {isDescription && <p>{task.description}</p>}
-                          </div>
-                        )}
-                      </div>
-                    )
-                  })}
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-
-        <Col>
-          <Card style={{ width: "18rem" }}>
-            <Card.Body>
-              <Card.Title className="bg-success">Tuesday - task.date</Card.Title>
-
-              {/* this body will be filled by a map and a state([]) */}
-              <div>
-                <input type="checkbox" name="dynStateName" id="dynStateID" />
-                <label htmlFor="dynStateName">task</label>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-
-        <Col>
-          <Card style={{ width: "18rem" }}>
-            <Card.Body>
-              <Card.Title className="bg-success">Wednesday - task.date</Card.Title>
-
-              {/* this body will be filled by a map and a state([]) */}
-              <div>
-                <input type="checkbox" name="dynStateName" id="dynStateID" />
-                <label htmlFor="dynStateName">task</label>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-
-        <Col>
-          <Card style={{ width: "18rem" }}>
-            <Card.Body>
-              <Card.Title className="bg-success">Thursday - task.date</Card.Title>
-
-              {/* this body will be filled by a map and a state([]) */}
-              <div>
-                <input type="checkbox" name="dynStateName" id="dynStateID" />
-                <label htmlFor="dynStateName">task</label>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-
-        <Col>
-          <Card style={{ width: "18rem" }}>
-            <Card.Body>
-              <Card.Title className="bg-success">Friday - task.date</Card.Title>
-
-              {/* this body will be filled by a map and a state([]) */}
-              <div>
-                <input type="checkbox" name="dynStateName" id="dynStateID" />
-                <label htmlFor="dynStateName">task</label>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-
-        {wantWekends && (
-          <>
-            <Col>
-              <Card style={{ width: "18rem" }}>
-                <Card.Body>
-                  <Card.Title className="bg-success">Saturday - task.date</Card.Title>
-
-                  {/* this body will be filled by a map and a state([]) */}
-                  <div>
-                    <input type="checkbox" name="dynStateName" id="dynStateID" />
-                    <label htmlFor="dynStateName">task</label>
-                  </div>
-                </Card.Body>
-              </Card>
-            </Col>
-
-            <Col>
-              <Card style={{ width: "18rem" }}>
-                <Card.Body>
-                  <Card.Title className="bg-success">Sunday - task.date</Card.Title>
-
-                  {/* this body will be filled by a map and a state([]) */}
-                  <div>
-                    <input type="checkbox" name="dynStateName" id="dynStateID" />
-                    <label htmlFor="dynStateName">task</label>
-                  </div>
-                </Card.Body>
-              </Card>
-            </Col>
-          </>
-        )}
+        {/* add the code here */}
       </div>
-
-      {/* task creator form */}
-      <Container>
-        <Form className="mt-5" onSubmit={(e) => createTask(e)}>
-          <Form.Control type="text" placeholder="Task title" required onChange={(e) => setTitle(e.target.value)} />
-
-          <Form.Group controlId="exampleForm.ControlSelect1">
-            <Form.Label>Date</Form.Label>
-            <input type="date" name="" id="" value={date} onChange={(e) => setDate(e.target.value)} />
-            <Form.Label>Start time</Form.Label>
-            <input type="time" name="" id="" value={startTime} onChange={(e) => setStartTime(e.target.value)} />
-            <Form.Label>Finish time</Form.Label>
-            <input type="time" name="" id="" value={endTime} onChange={(e) => setEndTime(e.target.value)} />
-          </Form.Group>
-
-          <Form.Group controlId="exampleForm.ControlTextarea1">
-            <Form.Label>Description</Form.Label>
-            <Form.Control as="textarea" rows={3} value={description} onChange={(e) => setDescription(e.target.value)} />
-          </Form.Group>
-          <Button type="submit">Submit</Button>
-        </Form>
-      </Container>
     </>
   )
 }
