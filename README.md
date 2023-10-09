@@ -19,19 +19,17 @@ Welcome to Week Planner, a simple web application built with Next.js, Tailwind C
     
 </ul>
 <h3>Installation</h3>
-To run Week Planner locally on your machine, follow these steps:
-
-Clone the repository:
-<b>git clone https://github.com/yourusername/week-planner.git</b>
-
-Install the dependencies:
-<b>npm install</b>
-
-Start the development server:
-<b>npm run dev</b>
-
-Open your browser and go to http://localhost:3000 to use Week Planner.
-
+    To run Week Planner locally on your machine, follow these steps:
+<ol>
+    <li>Clone the repository:</li>
+    <b>git clone https://github.com/yourusername/week-planner.git</b>  
+    <li>Install the dependencies:</li>
+    <b>npm install</b>
+    <li>Start the development server:
+    <b>npm run dev</b>
+    Open your browser and go to http://localhost:3000 to use Week Planner.
+    </li>
+</ol>
 <h3>Usage</h3>
 <ul>
     <li>Create an account or log in if you already have one.</li>
