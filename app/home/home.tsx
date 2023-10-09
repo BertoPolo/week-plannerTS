@@ -12,7 +12,7 @@ const Home = () => {
     dayOfWeek: string
   }
 
-  const tasks = Array<object>
+  let tasks: Array<object> = []
 
   const wantWekends = false
   const isDescription = false
@@ -31,7 +31,7 @@ const Home = () => {
     // create a random ID
     const uniqueId = uuidv4()
 
-    tasks([
+    tasks = [
       ...tasks,
       {
         id: uniqueId,
@@ -43,7 +43,7 @@ const Home = () => {
         description: description,
         dayOfWeek: "Mon",
       },
-    ])
+    ]
   }
 
   // function to modify task ( dynamic day)
@@ -51,7 +51,7 @@ const Home = () => {
   // use .filter to select the task
 
   function getCurrentWeekNumber() {
-    const today = new Date()
+    const today: Date = new Date()
     const yearStart = new Date(today.getFullYear(), 0, 1)
     const dayOfWeek = today.getDay()
 
