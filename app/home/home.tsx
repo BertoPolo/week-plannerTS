@@ -1,5 +1,18 @@
+import { v4 as uuidv4 } from "uuid"
+
 const Home = () => {
-  const tasks = [""]
+  interface Task {
+    id: string
+    title: string
+    startTime: string
+    endTime: string
+    date: Date
+    isDone: boolean
+    description: string
+    dayOfWeek: string
+  }
+
+  const tasks = Array<object>
 
   const wantWekends = false
   const isDescription = false
@@ -16,27 +29,12 @@ const Home = () => {
     e.preventDefault()
 
     // create a random ID
-    function generateUniqueId() {
-      let randomId
+    const uniqueId = uuidv4()
 
-      do {
-        randomId = Math.floor(Math.random() * 1000000) + 1
-      } while (tasks.includes(randomId))
-
-      return randomId
-    }
-    const generatedId = generateUniqueId()
-
-    // const dayOfWeek = () => date.getDay
-    // let lala = dayOfWeek()
-
-    // const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    // const dayOfWeek = daysOfWeek[date.getDay()]
-
-    setTasks([
+    tasks([
       ...tasks,
       {
-        id: generatedId,
+        id: uniqueId,
         title: title,
         startTime: startTime,
         endTime: endTime,
