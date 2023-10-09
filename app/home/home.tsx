@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from "uuid"
+import Link from "next/link"
 
 const Home = () => {
   interface Task {
@@ -52,7 +53,7 @@ const Home = () => {
 
   function getCurrentWeekNumber() {
     const today: Date = new Date()
-    const yearStart = new Date(today.getFullYear(), 0, 1)
+    const yearStart: Date = new Date(today.getFullYear(), 0, 1)
     const dayOfWeek = today.getDay()
 
     // Calculate the week number
@@ -63,146 +64,152 @@ const Home = () => {
   return (
     <>
       {/* separate navbar in other component */}
-      <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home">Agenda</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link href="#home">TO DO lists</Nav.Link>
-            <Nav.Link href="#link">Full calendar</Nav.Link>
-          </Nav>
-          <Button onClick={() => setWantWekends(!wantWekends)}>Weekends On/Off</Button>
-        </Navbar.Collapse>
-      </Navbar>
+      <div className="navbar bg-base-100">
+        <div className="flex-1">
+          <Link href="#home">TO DO lists</Link>
+          <Link href="#link">Full calendar</Link>
+        </div>
+        <div className="flex-none">
+          <button className="btn btn-square btn-ghost" onClick={() => setWantWekends(!wantWekends)}>
+            Weekends On/Off
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-5 h-5 stroke-current">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
 
-      <Container>
+      <div>
         {/* <Row> */}
         <h3>Weekly Planner</h3>
         <h4>Week nº {getCurrentWeekNumber()}</h4>
         {/* </Row> */}
-      </Container>
+      </div>
 
-      <Container>
-        <Row>
-          <Col>
-            <Card style={{ width: "18rem" }}>
-              <Card.Body>
-                <Card.Title className="bg-success">Monday - monthDay </Card.Title>
-                {/*  / task.date, cant be cause it dont know WHICH task */}
+      <div>
+        <Col>
+          <Card style={{ width: "18rem" }}>
+            <Card.Body>
+              <Card.Title className="bg-success">Monday - monthDay </Card.Title>
+              {/*  / task.date, cant be cause it dont know WHICH task */}
 
-                <div>
-                  {/* sort by start time */}
-                  {tasks &&
-                    tasks.map((task) => {
-                      return (
-                        <div key={task.id}>
-                          {task.dayOfWeek === "Mon" && (
-                            <div>
-                              <p>
-                                <b className="pointer" onClick={() => setIsDescription(!isDescription)}>
-                                  {task.title}
-                                </b>
-                              </p>
-                              {isDescription && <p>{task.description}</p>}
-                            </div>
-                          )}
-                        </div>
-                      )
-                    })}
-                </div>
-              </Card.Body>
-            </Card>
-          </Col>
+              <div>
+                {/* sort by start time */}
+                {tasks &&
+                  tasks.map((task) => {
+                    return (
+                      <div key={task.id}>
+                        {task.dayOfWeek === "Mon" && (
+                          <div>
+                            <p>
+                              <b className="pointer" onClick={() => setIsDescription(!isDescription)}>
+                                {task.title}
+                              </b>
+                            </p>
+                            {isDescription && <p>{task.description}</p>}
+                          </div>
+                        )}
+                      </div>
+                    )
+                  })}
+              </div>
+            </Card.Body>
+          </Card>
+        </Col>
 
-          <Col>
-            <Card style={{ width: "18rem" }}>
-              <Card.Body>
-                <Card.Title className="bg-success">Tuesday - task.date</Card.Title>
+        <Col>
+          <Card style={{ width: "18rem" }}>
+            <Card.Body>
+              <Card.Title className="bg-success">Tuesday - task.date</Card.Title>
 
-                {/* this body will be filled by a map and a state([]) */}
-                <div>
-                  <input type="checkbox" name="dynStateName" id="dynStateID" />
-                  <label htmlFor="dynStateName">task</label>
-                </div>
-              </Card.Body>
-            </Card>
-          </Col>
+              {/* this body will be filled by a map and a state([]) */}
+              <div>
+                <input type="checkbox" name="dynStateName" id="dynStateID" />
+                <label htmlFor="dynStateName">task</label>
+              </div>
+            </Card.Body>
+          </Card>
+        </Col>
 
-          <Col>
-            <Card style={{ width: "18rem" }}>
-              <Card.Body>
-                <Card.Title className="bg-success">Wednesday - task.date</Card.Title>
+        <Col>
+          <Card style={{ width: "18rem" }}>
+            <Card.Body>
+              <Card.Title className="bg-success">Wednesday - task.date</Card.Title>
 
-                {/* this body will be filled by a map and a state([]) */}
-                <div>
-                  <input type="checkbox" name="dynStateName" id="dynStateID" />
-                  <label htmlFor="dynStateName">task</label>
-                </div>
-              </Card.Body>
-            </Card>
-          </Col>
+              {/* this body will be filled by a map and a state([]) */}
+              <div>
+                <input type="checkbox" name="dynStateName" id="dynStateID" />
+                <label htmlFor="dynStateName">task</label>
+              </div>
+            </Card.Body>
+          </Card>
+        </Col>
 
-          <Col>
-            <Card style={{ width: "18rem" }}>
-              <Card.Body>
-                <Card.Title className="bg-success">Thursday - task.date</Card.Title>
+        <Col>
+          <Card style={{ width: "18rem" }}>
+            <Card.Body>
+              <Card.Title className="bg-success">Thursday - task.date</Card.Title>
 
-                {/* this body will be filled by a map and a state([]) */}
-                <div>
-                  <input type="checkbox" name="dynStateName" id="dynStateID" />
-                  <label htmlFor="dynStateName">task</label>
-                </div>
-              </Card.Body>
-            </Card>
-          </Col>
+              {/* this body will be filled by a map and a state([]) */}
+              <div>
+                <input type="checkbox" name="dynStateName" id="dynStateID" />
+                <label htmlFor="dynStateName">task</label>
+              </div>
+            </Card.Body>
+          </Card>
+        </Col>
 
-          <Col>
-            <Card style={{ width: "18rem" }}>
-              <Card.Body>
-                <Card.Title className="bg-success">Friday - task.date</Card.Title>
+        <Col>
+          <Card style={{ width: "18rem" }}>
+            <Card.Body>
+              <Card.Title className="bg-success">Friday - task.date</Card.Title>
 
-                {/* this body will be filled by a map and a state([]) */}
-                <div>
-                  <input type="checkbox" name="dynStateName" id="dynStateID" />
-                  <label htmlFor="dynStateName">task</label>
-                </div>
-              </Card.Body>
-            </Card>
-          </Col>
+              {/* this body will be filled by a map and a state([]) */}
+              <div>
+                <input type="checkbox" name="dynStateName" id="dynStateID" />
+                <label htmlFor="dynStateName">task</label>
+              </div>
+            </Card.Body>
+          </Card>
+        </Col>
 
-          {wantWekends && (
-            <>
-              <Col>
-                <Card style={{ width: "18rem" }}>
-                  <Card.Body>
-                    <Card.Title className="bg-success">Saturday - task.date</Card.Title>
+        {wantWekends && (
+          <>
+            <Col>
+              <Card style={{ width: "18rem" }}>
+                <Card.Body>
+                  <Card.Title className="bg-success">Saturday - task.date</Card.Title>
 
-                    {/* this body will be filled by a map and a state([]) */}
-                    <div>
-                      <input type="checkbox" name="dynStateName" id="dynStateID" />
-                      <label htmlFor="dynStateName">task</label>
-                    </div>
-                  </Card.Body>
-                </Card>
-              </Col>
+                  {/* this body will be filled by a map and a state([]) */}
+                  <div>
+                    <input type="checkbox" name="dynStateName" id="dynStateID" />
+                    <label htmlFor="dynStateName">task</label>
+                  </div>
+                </Card.Body>
+              </Card>
+            </Col>
 
-              <Col>
-                <Card style={{ width: "18rem" }}>
-                  <Card.Body>
-                    <Card.Title className="bg-success">Sunday - task.date</Card.Title>
+            <Col>
+              <Card style={{ width: "18rem" }}>
+                <Card.Body>
+                  <Card.Title className="bg-success">Sunday - task.date</Card.Title>
 
-                    {/* this body will be filled by a map and a state([]) */}
-                    <div>
-                      <input type="checkbox" name="dynStateName" id="dynStateID" />
-                      <label htmlFor="dynStateName">task</label>
-                    </div>
-                  </Card.Body>
-                </Card>
-              </Col>
-            </>
-          )}
-        </Row>
-      </Container>
+                  {/* this body will be filled by a map and a state([]) */}
+                  <div>
+                    <input type="checkbox" name="dynStateName" id="dynStateID" />
+                    <label htmlFor="dynStateName">task</label>
+                  </div>
+                </Card.Body>
+              </Card>
+            </Col>
+          </>
+        )}
+      </div>
 
       {/* task creator form */}
       <Container>
@@ -229,5 +236,4 @@ const Home = () => {
   )
 }
 
-export default Home
 export default Home
