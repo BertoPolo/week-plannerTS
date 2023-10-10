@@ -1,30 +1,32 @@
 "use client" // temporary
 import { v4 as uuidv4 } from "uuid"
 import Link from "next/link"
+import { Textarea } from "@nextui-org/react"
 
 const Home = () => {
+  //interfaces
   interface Task {
     id: string
     title: string
     startTime: string
     endTime: string
-    date: Date
+    date: string
     isDone: boolean
     description: string
     dayOfWeek: string
   }
 
-  let tasks: Array<object> = []
-
+  //visual variables
   const wantWekends = false
-  const isDescription = false
+  const isDescription = false //enable description mode
 
+  let tasks: Array<object> = []
   //new task
-  const description = ""
-  const title = ""
-  const startTime = ""
-  const endTime = ""
-  const date = new Date()
+  let description = ""
+  let title = ""
+  let startTime = ""
+  let endTime = ""
+  let date = ""
 
   //create task
   const createTask = (e: any) => {
@@ -211,6 +213,28 @@ const Home = () => {
         </div>
       </div>
       {/* add the rest of the days here */}
+      {/* task creator form */}
+      <div>
+        <form className="mt-5" onSubmit={(e) => createTask(e)}>
+          <input type="text" placeholder="Task title" required onChange={(e) => (title = e.target.value)} />
+
+          <label>Date</label>
+          <input type="date" name="" id="" value={date} onChange={(e) => (date = e.target.value)} />
+
+          <label>Start time</label>
+          <input type="time" name="" id="" value={startTime} onChange={(e) => (startTime = e.target.value)} />
+
+          <label>Finish time</label>
+          <input type="time" name="" id="" value={endTime} onChange={(e) => (endTime = e.target.value)} />
+
+          <label>Description</label>
+          <Textarea minRows={2} placeholder="text area" value={description} onChange={(e) => (description = e.target.value)} />
+
+          <button type="submit" className="bg-sky-400 hover:bg-sky-600 p-2 rounded">
+            Submit
+          </button>
+        </form>
+      </div>
     </>
   )
 }
