@@ -1,7 +1,7 @@
 import React from "react"
-import { ButtonProps } from "@/types"
+import { inputLabelProps } from "@/types"
 
-const inputAndLabel = ({ type, onChangeFunction, title, variable, ph }: ButtonProps) => {
+const inputAndLabel = ({ type, onChangeFunction, title, variable, ph }: inputLabelProps) => {
   return (
     <>
       <label>{title}</label>

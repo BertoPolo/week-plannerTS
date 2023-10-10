@@ -10,16 +10,15 @@ export interface Task {
   dayOfWeek: string
 }
 
-export interface ButtonProps {
+export interface inputLabelProps {
   type: string
-  onChangeFunction: string
+  onChangeFunction: Function
   title: string
   variable: string
   ph?: string
 }
 export interface CustomButtonProps {
-  launchFunction: string
+  launchFunction: Function
   title: string
   style: string
-  type: string
 }
