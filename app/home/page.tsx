@@ -2,7 +2,8 @@
 import { v4 as uuidv4 } from "uuid"
 import Link from "next/link"
 import { Textarea } from "@nextui-org/react"
-import inputAndLabel from "../../components/inputAndLabel"
+import InputAndLabel from "../../components/InputAndLabel"
+import CustomButton from "../../components/CustomButton"
 
 const Home = () => {
   //visual variables
@@ -18,9 +19,7 @@ const Home = () => {
   let date = ""
 
   //create task
-  const createTask = (e: any) => {
-    e.preventDefault()
-
+  const createTask = () => {
     // create a random ID
     const uniqueId = uuidv4()
 
@@ -202,26 +201,24 @@ const Home = () => {
       {/* add the rest of the days here */}
 
       {/* task creator form */}
-      <div>
-        <form className="mt-5" onSubmit={(e) => createTask(e)}>
-          <input type="text" placeholder="Task title" onChange={(e) => (title = e.target.value)} />
+      <div className="mt-5">
+        <InputAndLabel type="text" variableNameToUpdate="title" title="Task title" />
+        {/*
+        <input type="text" placeholder="Task title" onChange={(e) => (title = e.target.value)} />
 
-          <label>Date</label>
-          <input type="date" name="" id="" value={date} onChange={(e) => (date = e.target.value)} />
+        <label>Date</label>
+        <input type="date" name="" id="" value={date} onChange={(e) => (date = e.target.value)} />
 
-          <label>Start time</label>
-          <input type="time" name="" id="" value={startTime} onChange={(e) => (startTime = e.target.value)} />
+        <label>Start time</label>
+        <input type="time" name="" id="" value={startTime} onChange={(e) => (startTime = e.target.value)} />
 
-          <label>Finish time</label>
-          <input type="time" name="" id="" value={endTime} onChange={(e) => (endTime = e.target.value)} />
+        <label>Finish time</label>
+        <input type="time" name="" id="" value={endTime} onChange={(e) => (endTime = e.target.value)} />
 
-          <label>Description</label>
-          <Textarea minRows={2} placeholder="text area" value={description} onChange={(e) => (description = e.target.value)} />
+        <label>Description</label>
+        <Textarea minRows={2} placeholder="text area" value={description} onChange={(e) => (description = e.target.value)} /> */}
 
-          <button type="submit" className="bg-sky-400 hover:bg-sky-600 p-2 rounded-full">
-            Submit
-          </button>
-        </form>
+        <CustomButton launchFunction={() => createTask()} title="Create Task" />
       </div>
     </>
   )

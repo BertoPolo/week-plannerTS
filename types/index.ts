@@ -10,15 +10,14 @@ export interface Task {
   dayOfWeek: string
 }
 
-export interface inputLabelProps {
-  type: string
-  onChangeFunction: Function
+export interface InputLabelProps {
+  type: string //{ enum: "text" | "email" | "password" | "textarea" }
+  variableNameToUpdate: string
   title: string
-  variable: string
   ph?: string
 }
 export interface CustomButtonProps {
   launchFunction: Function
   title: string
-  style: string
+  classToStyle?: string
 }
