@@ -5,10 +5,9 @@ import { CustomButtonProps } from "@/types"
 }
 
 const CustomButton = ({ launchFunction, title, classToStyle }: CustomButtonProps) => {
-  if (classToStyle === undefined) classToStyle = "bg-sky-400 hover:bg-sky-600 p-2 rounded-full"
   return (
     <>
-      <button type="button" onClick={(e) => launchFunction(e)} className={classToStyle}>
+      <button type="button" onClick={(e) => launchFunction(e)} className={classToStyle || "bg-sky-400 hover:bg-sky-600 p-2 rounded-full"}>
         {title}
       </button>
     </>

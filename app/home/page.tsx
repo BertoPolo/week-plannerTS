@@ -202,7 +202,8 @@ const Home = () => {
 
       {/* task creator form */}
       <div className="mt-5">
-        <InputAndLabel type="text" variableNameToUpdate="title" title="Task title" />
+        <InputAndLabel type="text" variableNameToUpdate={title} title="Task title" />
+
         {/*
         <input type="text" placeholder="Task title" onChange={(e) => (title = e.target.value)} />
 
