@@ -2,6 +2,7 @@
 import { v4 as uuidv4 } from "uuid"
 import Link from "next/link"
 import { Textarea } from "@nextui-org/react"
+import inputAndLabel from "../../components/inputAndLabel"
 
 const Home = () => {
   //interfaces
@@ -87,10 +88,8 @@ const Home = () => {
         </div>
       </div>
       <div>
-        {/* <Row> */}
-        <h3>Weekly Planner</h3>
+        <h1>Weekly Planner</h1>
         <h4>Week nº {getCurrentWeekNumber()}</h4>
-        {/* </Row> */}
       </div>
 
       {/* Monday */}
@@ -213,10 +212,13 @@ const Home = () => {
         </div>
       </div>
       {/* add the rest of the days here */}
+
       {/* task creator form */}
       <div>
+        {/* <input type  placeholder? onChange label/> */}
+        {/* <button onCLick title style(do a default if this is empty) /> */}
         <form className="mt-5" onSubmit={(e) => createTask(e)}>
-          <input type="text" placeholder="Task title" required onChange={(e) => (title = e.target.value)} />
+          <input type="text" placeholder="Task title" onChange={(e) => (title = e.target.value)} />
 
           <label>Date</label>
           <input type="date" name="" id="" value={date} onChange={(e) => (date = e.target.value)} />
@@ -230,7 +232,7 @@ const Home = () => {
           <label>Description</label>
           <Textarea minRows={2} placeholder="text area" value={description} onChange={(e) => (description = e.target.value)} />
 
-          <button type="submit" className="bg-sky-400 hover:bg-sky-600 p-2 rounded">
+          <button type="submit" className="bg-sky-400 hover:bg-sky-600 p-2 rounded-full">
             Submit
           </button>
         </form>
