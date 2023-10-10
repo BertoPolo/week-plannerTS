@@ -5,18 +5,6 @@ import { Textarea } from "@nextui-org/react"
 import inputAndLabel from "../../components/inputAndLabel"
 
 const Home = () => {
-  //interfaces
-  interface Task {
-    id: string
-    title: string
-    startTime: string
-    endTime: string
-    date: string
-    isDone: boolean
-    description: string
-    dayOfWeek: string
-  }
-
   //visual variables
   const wantWekends = false
   const isDescription = false //enable description mode
@@ -215,8 +203,6 @@ const Home = () => {
 
       {/* task creator form */}
       <div>
-        {/* <input type  placeholder? onChange label/> */}
-        {/* <button onCLick title style(do a default if this is empty) /> */}
         <form className="mt-5" onSubmit={(e) => createTask(e)}>
           <input type="text" placeholder="Task title" onChange={(e) => (title = e.target.value)} />
 

@@ -14,5 +14,12 @@ export interface ButtonProps {
   type: string
   onChangeFunction: string
   title: string
+  variable: string
   ph?: string
+}
+export interface CustomButtonProps {
+  launchFunction: string
+  title: string
+  style: string
+  type: string
 }
