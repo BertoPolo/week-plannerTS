@@ -84,7 +84,6 @@ const Home = () => {
           </button>
         </div>
       </div>
-
       <div>
         {/* <Row> */}
         <h3>Weekly Planner</h3>
@@ -92,102 +91,125 @@ const Home = () => {
         {/* </Row> */}
       </div>
 
+      {/* Monday */}
+      <div className="columns-auto">
+        <div className="card w-96 bg-base-100 shadow-xl">
+          <figure>
+            <img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" />
+          </figure>
+          <div className="card-body">
+            <h2 className="card-title">Monday - monthDay</h2>
+            <div>
+              {/* sort by start time */}
+              {tasks &&
+                tasks.map((task: any) => {
+                  return (
+                    <div key={task.id}>
+                      {task.dayOfWeek === "Mon" && (
+                        <div>
+                          <p>
+                            <b className="pointer" onClick={() => !isDescription}>
+                              {task.title}
+                            </b>
+                          </p>
+                          {isDescription && <p>{task.description}</p>}
+                        </div>
+                      )}
+                    </div>
+                  )
+                })}
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Tuesday */}
-      <div className="columns-auto">
-        <div className="card w-96 bg-base-100 shadow-xl">
-          <figure>
-            <img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">Tuesday - monthDay</h2>
-            <div>
-              {/* sort by start time */}
-              {tasks &&
-                tasks.map((task: any) => {
-                  return (
-                    <div key={task.id}>
-                      {task.dayOfWeek === "Mon" && (
-                        <div>
-                          <p>
-                            <b className="pointer" onClick={() => !isDescription}>
-                              {task.title}
-                            </b>
-                          </p>
-                          {isDescription && <p>{task.description}</p>}
-                        </div>
-                      )}
-                    </div>
-                  )
-                })}
-            </div>
+      <div className="card w-96 bg-base-100 shadow-xl">
+        <figure>
+          <img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" />
+        </figure>
+        <div className="card-body">
+          <h2 className="card-title">Tuesday - monthDay</h2>
+          <div>
+            {/* sort by start time */}
+            {tasks &&
+              tasks.map((task: any) => {
+                return (
+                  <div key={task.id}>
+                    {task.dayOfWeek === "Mon" && (
+                      <div>
+                        <p>
+                          <b className="pointer" onClick={() => !isDescription}>
+                            {task.title}
+                          </b>
+                        </p>
+                        {isDescription && <p>{task.description}</p>}
+                      </div>
+                    )}
+                  </div>
+                )
+              })}
           </div>
         </div>
       </div>
-
       {/* Wednesday */}
-      <div className="columns-auto">
-        <div className="card w-96 bg-base-100 shadow-xl">
-          <figure>
-            <img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">Wednesday - monthDay</h2>
-            <div>
-              {/* sort by start time */}
-              {tasks &&
-                tasks.map((task: any) => {
-                  return (
-                    <div key={task.id}>
-                      {task.dayOfWeek === "Mon" && (
-                        <div>
-                          <p>
-                            <b className="pointer" onClick={() => !isDescription}>
-                              {task.title}
-                            </b>
-                          </p>
-                          {isDescription && <p>{task.description}</p>}
-                        </div>
-                      )}
-                    </div>
-                  )
-                })}
-            </div>
+      <div className="card w-96 bg-base-100 shadow-xl">
+        <figure>
+          <img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" />
+        </figure>
+        <div className="card-body">
+          <h2 className="card-title">Wednesday - monthDay</h2>
+          <div>
+            {/* sort by start time */}
+            {tasks &&
+              tasks.map((task: any) => {
+                return (
+                  <div key={task.id}>
+                    {task.dayOfWeek === "Mon" && (
+                      <div>
+                        <p>
+                          <b className="pointer" onClick={() => !isDescription}>
+                            {task.title}
+                          </b>
+                        </p>
+                        {isDescription && <p>{task.description}</p>}
+                      </div>
+                    )}
+                  </div>
+                )
+              })}
           </div>
         </div>
       </div>
-
       {/* Thursday */}
-      <div className="columns-auto">
-        <div className="card w-96 bg-base-100 shadow-xl">
-          <figure>
-            <img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">Thursday - monthDay</h2>
-            <div>
-              {/* sort by start time */}
-              {tasks &&
-                tasks.map((task: any) => {
-                  return (
-                    <div key={task.id}>
-                      {task.dayOfWeek === "Mon" && (
-                        <div>
-                          <p>
-                            <b className="pointer" onClick={() => !isDescription}>
-                              {task.title}
-                            </b>
-                          </p>
-                          {isDescription && <p>{task.description}</p>}
-                        </div>
-                      )}
-                    </div>
-                  )
-                })}
-            </div>
+      <div className="card w-96 bg-base-100 shadow-xl">
+        <figure>
+          <img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" />
+        </figure>
+        <div className="card-body">
+          <h2 className="card-title">Thursday - monthDay</h2>
+          <div>
+            {/* sort by start time */}
+            {tasks &&
+              tasks.map((task: any) => {
+                return (
+                  <div key={task.id}>
+                    {task.dayOfWeek === "Mon" && (
+                      <div>
+                        <p>
+                          <b className="pointer" onClick={() => !isDescription}>
+                            {task.title}
+                          </b>
+                        </p>
+                        {isDescription && <p>{task.description}</p>}
+                      </div>
+                    )}
+                  </div>
+                )
+              })}
           </div>
         </div>
       </div>
-
       {/* add the rest of the days here */}
     </>
   )
