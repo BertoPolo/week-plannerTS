@@ -1,7 +1,7 @@
 //interfaces
 export interface Task {
   id: string
-  title: string
+  taskName: string
   startTime: string
   endTime: string
   date: string
@@ -11,9 +11,10 @@ export interface Task {
 }
 
 export interface InputLabelProps {
-  type: "text" | "email" | "password" | "textarea" | "date" | "time"
-  title: string
-  ph?: string
+  type: "text" | "email" | "password" | "textarea" | "date" | "time" // type of input
+  title: string //label
+  ph?: string // placeholder
+  variable: string // name of the variable what we want to change to create a new task
 }
 export interface CustomButtonProps {
   launchFunction: Function

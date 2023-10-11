@@ -2,7 +2,8 @@
 import React from "react"
 import { InputLabelProps } from "@/types"
 import { useState } from "react"
-import { testFunction } from "../functions/functions"
+import { changeVariableName } from "../functions/functions"
+
 const InputAndLabel = ({ type, title, ph }: InputLabelProps) => {
   const [state, setState] = useState("")
   //add if textarea : minRows
@@ -14,7 +15,7 @@ const InputAndLabel = ({ type, title, ph }: InputLabelProps) => {
         type={type}
         value={state}
         onChange={(e) => {
-          setState(e.target.value), testFunction(state)
+          setState(e.target.value), changeVariableName(title, state)
         }}
         placeholder={ph}
       />

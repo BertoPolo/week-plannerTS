@@ -2,15 +2,19 @@
 import { v4 as uuidv4 } from "uuid"
 import { Task } from "@/types"
 
-let test = ""
-let test2 = ""
+let taskName = ""
+let startTime = ""
+let endTime = ""
+let date = ""
+let description = ""
+let dayOfWeek = ""
 
-export const testFunction = (arg1: string) => {
-  test = arg1
-  console.log("create taks " + test)
+export const changeVariableName = (variable: any, value: string) => {
+  taskName = value
+  console.log("changing variable")
 }
 
-export const createTask = ({ title, startTime, endTime, date, isDone, description, dayOfWeek }: Task) => {
+export const createTask = () => {
   // create a random ID
   const uniqueId = uuidv4()
 
@@ -20,7 +24,7 @@ export const createTask = ({ title, startTime, endTime, date, isDone, descriptio
     ...tasks,
     {
       id: uniqueId,
-      title: title,
+      taskName: taskName,
       startTime: startTime,
       endTime: endTime,
       date: date,
@@ -29,4 +33,5 @@ export const createTask = ({ title, startTime, endTime, date, isDone, descriptio
       dayOfWeek: "Mon",
     },
   ]
+  console.log(tasks)
 }

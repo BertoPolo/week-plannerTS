@@ -165,11 +165,11 @@ const Home = () => {
 
       {/* task creator form */}
       <div className="mt-5">
-        <InputAndLabel type="text" title="Task title" />
-        <InputAndLabel type="date" title="Date" />
-        <InputAndLabel type="time" title="Start Time" />
-        <InputAndLabel type="time" title="End Time" />
-        <InputAndLabel type="textarea" title="Description" />
+        <InputAndLabel type="text" title="Task title" variable="taskName" />
+        <InputAndLabel type="date" title="Date" variable="date" />
+        <InputAndLabel type="time" title="Start Time" variable="startTime" />
+        <InputAndLabel type="time" title="End Time" variable="endTime" />
+        <InputAndLabel type="textarea" title="Description" variable="description" />
 
         <CustomButton launchFunction={createTask} title="Create Task" />
       </div>
