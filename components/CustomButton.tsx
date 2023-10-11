@@ -1,8 +1,6 @@
+"use client"
 import React from "react"
 import { CustomButtonProps } from "@/types"
-{
-  /* <button onCLick title style(do a default if this is empty) /> */
-}
 
 const CustomButton = ({ launchFunction, title, classToStyle }: CustomButtonProps) => {
   return (

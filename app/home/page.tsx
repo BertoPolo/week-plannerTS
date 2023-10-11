@@ -4,33 +4,14 @@ import Link from "next/link"
 import { Textarea } from "@nextui-org/react"
 import InputAndLabel from "../../components/InputAndLabel"
 import CustomButton from "../../components/CustomButton"
+import { createTask } from "../../functions/functions"
 
 const Home = () => {
   //visual variables
   const wantWekends = false
-  const isDescription = false //enable description mode
+  const isDescription = false //enables description mode
 
   let tasks: Array<object> = []
-
-  //create task
-  const createTask = () => {
-    // create a random ID
-    const uniqueId = uuidv4()
-
-    // tasks = [
-    //   ...tasks,
-    //   {
-    //     id: uniqueId,
-    //     title: title,
-    //     startTime: startTime,
-    //     endTime: endTime,
-    //     date: date,
-    //     isDone: false,
-    //     description: description,
-    //     dayOfWeek: "Mon",
-    //   },
-    // ]
-  }
 
   // function to modify task ( dynamic day)
   const modifyTask = () => {}
@@ -190,7 +171,7 @@ const Home = () => {
         <InputAndLabel type="time" title="End Time" />
         <InputAndLabel type="textarea" title="Description" />
 
-        <CustomButton launchFunction={() => createTask()} title="Create Task" />
+        <CustomButton launchFunction={createTask} title="Create Task" />
       </div>
     </>
   )
