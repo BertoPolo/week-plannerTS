@@ -11,12 +11,6 @@ const Home = () => {
   const isDescription = false //enable description mode
 
   let tasks: Array<object> = []
-  //new task
-  let description = ""
-  let title = ""
-  let startTime = ""
-  let endTime = ""
-  let date = ""
 
   //create task
   const createTask = () => {
@@ -202,7 +196,7 @@ const Home = () => {
 
       {/* task creator form */}
       <div className="mt-5">
-        <InputAndLabel type="text" variableNameToUpdate={title} title="Task title" />
+        <InputAndLabel type="text" title="Task title" />
 
         {/*
         <input type="text" placeholder="Task title" onChange={(e) => (title = e.target.value)} />

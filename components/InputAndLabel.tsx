@@ -1,13 +1,15 @@
 import React from "react"
 import { InputLabelProps } from "@/types"
+import { useState } from "react"
 
-const InputAndLabel = ({ type, variableNameToUpdate, title, ph }: InputLabelProps) => {
-  //try moving here the variable
+const InputAndLabel = ({ type, title, ph }: InputLabelProps) => {
+  const [lala, setLala] = useState("")
+
   return (
     <>
       <label>{title}</label>
       <br />
-      <input type={type} value={variableNameToUpdate} onChange={(e) => (variableNameToUpdate = e.target.value)} placeholder={ph} />
+      <input type={type} value={lala} onChange={(e) => setLala(e.target.value)} placeholder={ph} />
     </>
   )
 }
