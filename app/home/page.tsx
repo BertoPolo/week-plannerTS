@@ -17,19 +17,19 @@ const Home = () => {
     // create a random ID
     const uniqueId = uuidv4()
 
-    tasks = [
-      ...tasks,
-      {
-        id: uniqueId,
-        title: title,
-        startTime: startTime,
-        endTime: endTime,
-        date: date,
-        isDone: false,
-        description: description,
-        dayOfWeek: "Mon",
-      },
-    ]
+    // tasks = [
+    //   ...tasks,
+    //   {
+    //     id: uniqueId,
+    //     title: title,
+    //     startTime: startTime,
+    //     endTime: endTime,
+    //     date: date,
+    //     isDone: false,
+    //     description: description,
+    //     dayOfWeek: "Mon",
+    //   },
+    // ]
   }
 
   // function to modify task ( dynamic day)
@@ -74,11 +74,8 @@ const Home = () => {
       </div>
 
       {/* Monday */}
-      <div className="columns-auto">
+      <div className="columns-4">
         <div className="card w-96 bg-base-100 shadow-xl">
-          <figure>
-            <img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" />
-          </figure>
           <div className="card-body">
             <h2 className="card-title">Monday - monthDay</h2>
             <div>
@@ -103,115 +100,95 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Tuesday */}
-      <div className="card w-96 bg-base-100 shadow-xl">
-        <figure>
-          <img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">Tuesday - monthDay</h2>
-          <div>
-            {/* sort by start time */}
-            {tasks &&
-              tasks.map((task: any) => {
-                return (
-                  <div key={task.id}>
-                    {task.dayOfWeek === "Mon" && (
-                      <div>
-                        <p>
-                          <b className="pointer" onClick={() => !isDescription}>
-                            {task.title}
-                          </b>
-                        </p>
-                        {isDescription && <p>{task.description}</p>}
-                      </div>
-                    )}
-                  </div>
-                )
-              })}
+        {/* Tuesday */}
+        <div className="card w-96 bg-base-100 shadow-xl">
+          <div className="card-body">
+            <h2 className="card-title">Tuesday - monthDay</h2>
+            <div>
+              {/* sort by start time */}
+              {tasks &&
+                tasks.map((task: any) => {
+                  return (
+                    <div key={task.id}>
+                      {task.dayOfWeek === "Mon" && (
+                        <div>
+                          <p>
+                            <b className="pointer" onClick={() => !isDescription}>
+                              {task.title}
+                            </b>
+                          </p>
+                          {isDescription && <p>{task.description}</p>}
+                        </div>
+                      )}
+                    </div>
+                  )
+                })}
+            </div>
           </div>
         </div>
-      </div>
-      {/* Wednesday */}
-      <div className="card w-96 bg-base-100 shadow-xl">
-        <figure>
-          <img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">Wednesday - monthDay</h2>
-          <div>
-            {/* sort by start time */}
-            {tasks &&
-              tasks.map((task: any) => {
-                return (
-                  <div key={task.id}>
-                    {task.dayOfWeek === "Mon" && (
-                      <div>
-                        <p>
-                          <b className="pointer" onClick={() => !isDescription}>
-                            {task.title}
-                          </b>
-                        </p>
-                        {isDescription && <p>{task.description}</p>}
-                      </div>
-                    )}
-                  </div>
-                )
-              })}
+        {/* Wednesday */}
+        <div className="card w-96 bg-base-100 shadow-xl">
+          <div className="card-body">
+            <h2 className="card-title">Wednesday - monthDay</h2>
+            <div>
+              {/* sort by start time */}
+              {tasks &&
+                tasks.map((task: any) => {
+                  return (
+                    <div key={task.id}>
+                      {task.dayOfWeek === "Mon" && (
+                        <div>
+                          <p>
+                            <b className="pointer" onClick={() => !isDescription}>
+                              {task.title}
+                            </b>
+                          </p>
+                          {isDescription && <p>{task.description}</p>}
+                        </div>
+                      )}
+                    </div>
+                  )
+                })}
+            </div>
           </div>
         </div>
-      </div>
-      {/* Thursday */}
-      <div className="card w-96 bg-base-100 shadow-xl">
-        <figure>
-          <img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">Thursday - monthDay</h2>
-          <div>
-            {/* sort by start time */}
-            {tasks &&
-              tasks.map((task: any) => {
-                return (
-                  <div key={task.id}>
-                    {task.dayOfWeek === "Mon" && (
-                      <div>
-                        <p>
-                          <b className="pointer" onClick={() => !isDescription}>
-                            {task.title}
-                          </b>
-                        </p>
-                        {isDescription && <p>{task.description}</p>}
-                      </div>
-                    )}
-                  </div>
-                )
-              })}
+        {/* Thursday */}
+        <div className="card w-96 bg-base-100 shadow-xl">
+          <div className="card-body">
+            <h2 className="card-title">Thursday - monthDay</h2>
+            <div>
+              {/* sort by start time */}
+              {tasks &&
+                tasks.map((task: any) => {
+                  return (
+                    <div key={task.id}>
+                      {task.dayOfWeek === "Mon" && (
+                        <div>
+                          <p>
+                            <b className="pointer" onClick={() => !isDescription}>
+                              {task.title}
+                            </b>
+                          </p>
+                          {isDescription && <p>{task.description}</p>}
+                        </div>
+                      )}
+                    </div>
+                  )
+                })}
+            </div>
           </div>
         </div>
+        {/* add the rest of the days here */}
       </div>
-      {/* add the rest of the days here */}
 
       {/* task creator form */}
       <div className="mt-5">
         <InputAndLabel type="text" title="Task title" />
-
-        {/*
-        <input type="text" placeholder="Task title" onChange={(e) => (title = e.target.value)} />
-
-        <label>Date</label>
-        <input type="date" name="" id="" value={date} onChange={(e) => (date = e.target.value)} />
-
-        <label>Start time</label>
-        <input type="time" name="" id="" value={startTime} onChange={(e) => (startTime = e.target.value)} />
-
-        <label>Finish time</label>
-        <input type="time" name="" id="" value={endTime} onChange={(e) => (endTime = e.target.value)} />
-
-        <label>Description</label>
-        <Textarea minRows={2} placeholder="text area" value={description} onChange={(e) => (description = e.target.value)} /> */}
+        <InputAndLabel type="date" title="Date" />
+        <InputAndLabel type="time" title="Start Time" />
+        <InputAndLabel type="time" title="End Time" />
+        <InputAndLabel type="textarea" title="Description" />
 
         <CustomButton launchFunction={() => createTask()} title="Create Task" />
       </div>

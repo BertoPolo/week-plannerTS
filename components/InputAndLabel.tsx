@@ -3,13 +3,14 @@ import { InputLabelProps } from "@/types"
 import { useState } from "react"
 
 const InputAndLabel = ({ type, title, ph }: InputLabelProps) => {
-  const [lala, setLala] = useState("")
-
+  const [state, setState] = useState("")
+  //add if textarea : minRows
   return (
     <>
       <label>{title}</label>
       <br />
-      <input type={type} value={lala} onChange={(e) => setLala(e.target.value)} placeholder={ph} />
+      <input type={type} value={state} onChange={(e) => setState(e.target.value)} placeholder={ph} />
+      <br />
     </>
   )
 }

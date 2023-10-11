@@ -11,7 +11,7 @@ export interface Task {
 }
 
 export interface InputLabelProps {
-  type: "text" | "email" | "password" | "textarea"
+  type: "text" | "email" | "password" | "textarea" | "date" | "time"
   title: string
   ph?: string
 }
