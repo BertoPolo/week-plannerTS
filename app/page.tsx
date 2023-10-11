@@ -4,8 +4,12 @@ import Link from "next/link"
 export default function Home() {
   return (
     <div>
-      <h1>Welcome!</h1>
-      <Link href="home">move to home page</Link>
+      <h1>
+        <b>Welcome</b>!
+      </h1>
+      <Link href="home" className="text-primary">
+        Move to home page
+      </Link>
     </div>
   )
 }
