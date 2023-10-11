@@ -4,14 +4,12 @@ import Link from "next/link"
 import { Textarea } from "@nextui-org/react"
 import InputAndLabel from "../../components/InputAndLabel"
 import CustomButton from "../../components/CustomButton"
-import { createTask } from "../../functions/functions"
+import { createTask, tasks } from "../../functions/functions"
 
 const Home = () => {
   //visual variables
   const wantWekends = false
   const isDescription = false //enables description mode
-
-  let tasks: Array<object> = []
 
   // function to modify task ( dynamic day)
   const modifyTask = () => {}
