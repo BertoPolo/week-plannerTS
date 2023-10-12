@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from "uuid"
 import { Task } from "@/types"
 
 export const wantWekends = false
+export const darkMode = false
 
 //new task
 let taskName = ""
@@ -23,6 +24,9 @@ let newTask = {
 
 //all the tasks here
 export let tasks: Array<object> = []
+
+// function to modify task ( dynamic day)
+export const modifyTask = () => {}
 
 export const changeVariableName = (variable: string, value: string) => {
   if (variable === "taskName") newTask.taskName = value

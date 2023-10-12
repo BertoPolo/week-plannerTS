@@ -7,8 +7,6 @@ import Day from "../../components/Day"
 import { createTask, tasks, wantWekends } from "../../functions/functionsAndVars"
 
 const Home = () => {
-  // function to modify task ( dynamic day)
-  const modifyTask = () => {}
   // use .filter to select the task
 
   function getCurrentWeekNumber() {
@@ -50,7 +48,7 @@ const Home = () => {
       </div>
       <Day />
       {/* task creator form */}
-      <div className="mt-5 grid justify-items-center">
+      <div className="mt-3 grid justify-items-center">
         <InputAndLabel type="text" title="Task title" variable="taskName" ph="enter task here" />
         <InputAndLabel type="date" title="Date" variable="date" />
         <InputAndLabel type="time" title="Start Time" variable="startTime" />
