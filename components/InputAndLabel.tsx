@@ -2,10 +2,10 @@
 import React from "react"
 import { InputLabelProps } from "@/types"
 import { useState } from "react"
-import { changeVariableName } from "../functions/functions"
+import { changeVariableName } from "../functions/functionsAndVars"
 
 const InputAndLabel = ({ type, title, ph }: InputLabelProps) => {
-  const [state, setState] = useState("")
+  const [value, setValue] = useState("") // this is the value used to modify the global variable
   //add if textarea : minRows
   return (
     <>
@@ -13,9 +13,9 @@ const InputAndLabel = ({ type, title, ph }: InputLabelProps) => {
       <br />
       <input
         type={type}
-        value={state}
+        value={value}
         onChange={(e) => {
-          setState(e.target.value), changeVariableName(title, state)
+          setValue(e.target.value), changeVariableName(title, value)
         }}
         placeholder={ph}
       />

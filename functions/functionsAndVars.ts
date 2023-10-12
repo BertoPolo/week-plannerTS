@@ -2,6 +2,8 @@
 import { v4 as uuidv4 } from "uuid"
 import { Task } from "@/types"
 
+export const wantWekends = false
+
 //new task
 let taskName = ""
 let startTime = ""
@@ -10,20 +12,29 @@ let date = ""
 let description = ""
 let dayOfWeek = ""
 
+let newTask = {
+  taskName: "",
+  startTime: "",
+  endTime: "",
+  date: "",
+  description: "",
+  dayOfWeek: "",
+}
+
 //all the tasks here
 export let tasks: Array<object> = []
 
 export const changeVariableName = (variable: string, value: string) => {
-  if (variable === "taskName") taskName = value
-  if (variable === "startTime") startTime = value
-  if (variable === "endTime") endTime = value
-  if (variable === "date") date = value
-  if (variable === "description") description = value
-  if (variable === "dayOfWeek") dayOfWeek = value
+  if (variable === "taskName") newTask.taskName = value
+  if (variable === "startTime") newTask.startTime = value
+  if (variable === "endTime") newTask.endTime = value
+  if (variable === "date") newTask.date = value
+  if (variable === "description") newTask.description = value
+  if (variable === "dayOfWeek") newTask.dayOfWeek = value
   // else throw new Error("Invalid variable name")
 
   console.log("changing variable")
-  //   console.log(value)
+  console.log(newTask)
 }
 
 export const createTask = () => {

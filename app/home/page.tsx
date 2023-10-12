@@ -1,16 +1,12 @@
 "use client" // temporary
-import { v4 as uuidv4 } from "uuid"
 import Link from "next/link"
-import { Textarea } from "@nextui-org/react"
+// import { Textarea } from "@nextui-org/react"
 import InputAndLabel from "../../components/InputAndLabel"
 import CustomButton from "../../components/CustomButton"
 import Day from "../../components/Day"
-import { createTask, tasks } from "../../functions/functions"
+import { createTask, tasks, wantWekends } from "../../functions/functionsAndVars"
 
 const Home = () => {
-  //visual variables
-  const wantWekends = false
-
   // function to modify task ( dynamic day)
   const modifyTask = () => {}
   // use .filter to select the task

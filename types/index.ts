@@ -7,7 +7,7 @@ export interface Task {
   date: string
   isDone: boolean
   description: string
-  dayOfWeek: string
+  dayOfWeek: "Mon" | "Tue" | "Wed" | "Thu" | "Fri" | "Sat" | "Sun"
 }
 
 export interface InputLabelProps {
