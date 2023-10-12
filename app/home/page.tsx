@@ -50,8 +50,8 @@ const Home = () => {
       </div>
       <Day />
       {/* task creator form */}
-      <div className="mt-5">
-        <InputAndLabel type="text" title="Task title" variable="taskName" />
+      <div className="mt-5 grid justify-items-center">
+        <InputAndLabel type="text" title="Task title" variable="taskName" ph="enter task here" />
         <InputAndLabel type="date" title="Date" variable="date" />
         <InputAndLabel type="time" title="Start Time" variable="startTime" />
         <InputAndLabel type="time" title="End Time" variable="endTime" />

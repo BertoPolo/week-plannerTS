@@ -1,7 +1,6 @@
 "use client"
-import React from "react"
+import React, { useState } from "react"
 import { InputLabelProps } from "@/types"
-import { useState } from "react"
 import { changeVariableName } from "../functions/functionsAndVars"
 
 const InputAndLabel = ({ type, title, ph }: InputLabelProps) => {

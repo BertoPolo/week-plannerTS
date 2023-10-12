@@ -1,7 +1,6 @@
 "use client"
-import React from "react"
+import React, { useState } from "react"
 import { tasks, wantWekends } from "../functions/functionsAndVars"
-import { useState } from "react"
 // import { Task } from "@/types"
 
 const Day = () => {
@@ -14,7 +13,7 @@ const Day = () => {
       {/*  */}
       {weekDays.map((weekDay) => {
         return (
-          <div className="card w-96 bg-neutral text-neutral-content" key={weekDay}>
+          <div className="card w-60 bg-neutral text-neutral-content " key={weekDay}>
             <div className="card-body">
               <h2 className="card-title">{weekDay} - monthDay</h2>
               <div>
