@@ -4,12 +4,12 @@ import Link from "next/link"
 import { Textarea } from "@nextui-org/react"
 import InputAndLabel from "../../components/InputAndLabel"
 import CustomButton from "../../components/CustomButton"
+import Day from "../../components/Day"
 import { createTask, tasks } from "../../functions/functions"
 
 const Home = () => {
   //visual variables
   const wantWekends = false
-  const isDescription = false //enables description mode
 
   // function to modify task ( dynamic day)
   const modifyTask = () => {}
@@ -47,120 +47,12 @@ const Home = () => {
           </button>
         </div>
       </div>
+      {/* intro */}
       <div>
         <h1>Weekly Planner</h1>
         <h4>Week nº {getCurrentWeekNumber()}</h4>
       </div>
-
-      {/* Monday */}
-      <div className="columns-4">
-        <div className="card w-96 bg-base-100 shadow-xl">
-          <div className="card-body">
-            <h2 className="card-title">Monday - monthDay</h2>
-            <div>
-              {/* sort by start time */}
-              {tasks &&
-                tasks.map((task: any) => {
-                  return (
-                    <div key={task.id}>
-                      {task.dayOfWeek === "Mon" && (
-                        <div>
-                          <p>
-                            <b className="pointer" onClick={() => !isDescription}>
-                              {task.title}
-                            </b>
-                          </p>
-                          {isDescription && <p>{task.description}</p>}
-                        </div>
-                      )}
-                    </div>
-                  )
-                })}
-            </div>
-          </div>
-        </div>
-
-        {/* Tuesday */}
-        <div className="card w-96 bg-base-100 shadow-xl">
-          <div className="card-body">
-            <h2 className="card-title">Tuesday - monthDay</h2>
-            <div>
-              {/* sort by start time */}
-              {tasks &&
-                tasks.map((task: any) => {
-                  return (
-                    <div key={task.id}>
-                      {task.dayOfWeek === "Mon" && (
-                        <div>
-                          <p>
-                            <b className="pointer" onClick={() => !isDescription}>
-                              {task.title}
-                            </b>
-                          </p>
-                          {isDescription && <p>{task.description}</p>}
-                        </div>
-                      )}
-                    </div>
-                  )
-                })}
-            </div>
-          </div>
-        </div>
-        {/* Wednesday */}
-        <div className="card w-96 bg-base-100 shadow-xl">
-          <div className="card-body">
-            <h2 className="card-title">Wednesday - monthDay</h2>
-            <div>
-              {/* sort by start time */}
-              {tasks &&
-                tasks.map((task: any) => {
-                  return (
-                    <div key={task.id}>
-                      {task.dayOfWeek === "Mon" && (
-                        <div>
-                          <p>
-                            <b className="pointer" onClick={() => !isDescription}>
-                              {task.title}
-                            </b>
-                          </p>
-                          {isDescription && <p>{task.description}</p>}
-                        </div>
-                      )}
-                    </div>
-                  )
-                })}
-            </div>
-          </div>
-        </div>
-        {/* Thursday */}
-        <div className="card w-96 bg-base-100 shadow-xl">
-          <div className="card-body">
-            <h2 className="card-title">Thursday - monthDay</h2>
-            <div>
-              {/* sort by start time */}
-              {tasks &&
-                tasks.map((task: any) => {
-                  return (
-                    <div key={task.id}>
-                      {task.dayOfWeek === "Mon" && (
-                        <div>
-                          <p>
-                            <b className="pointer" onClick={() => !isDescription}>
-                              {task.title}
-                            </b>
-                          </p>
-                          {isDescription && <p>{task.description}</p>}
-                        </div>
-                      )}
-                    </div>
-                  )
-                })}
-            </div>
-          </div>
-        </div>
-        {/* add the rest of the days here */}
-      </div>
-
+      <Day />
       {/* task creator form */}
       <div className="mt-5">
         <InputAndLabel type="text" title="Task title" variable="taskName" />
