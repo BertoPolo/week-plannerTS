@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from "react"
 import { InputLabelProps } from "@/types"
-import { changeVariableName } from "../functions/functionsAndVars"
+import { changeInputValue } from "../functions/functionsAndVars"
 
 const InputAndLabel = ({ type, title, ph }: InputLabelProps) => {
   const [value, setValue] = useState("") // this is the value used to modify the global variable
@@ -14,7 +14,7 @@ const InputAndLabel = ({ type, title, ph }: InputLabelProps) => {
         type={type}
         value={value}
         onChange={(e) => {
-          setValue(e.target.value), changeVariableName(title, value)
+          setValue(e.target.value), changeInputValue(title, e.target.value)
         }}
         placeholder={ph}
       />

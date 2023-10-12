@@ -4,7 +4,7 @@ import Link from "next/link"
 import InputAndLabel from "../../components/InputAndLabel"
 import CustomButton from "../../components/CustomButton"
 import Day from "../../components/Day"
-import { createTask, tasks, wantWekends } from "../../functions/functionsAndVars"
+import { createTask, wantWekends } from "../../functions/functionsAndVars"
 
 const Home = () => {
   // use .filter to select the task
@@ -41,7 +41,7 @@ const Home = () => {
           </button>
         </div>
       </div>
-      {/* intro */}
+
       <div>
         <h1>Weekly Planner</h1>
         <h4>Week nº {getCurrentWeekNumber()}</h4>

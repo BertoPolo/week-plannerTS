@@ -5,14 +5,6 @@ import { Task } from "@/types"
 export const wantWekends = false
 export const darkMode = false
 
-//new task
-let taskName = ""
-let startTime = ""
-let endTime = ""
-let date = ""
-let description = ""
-let dayOfWeek = ""
-
 let newTask = {
   taskName: "",
   startTime: "",
@@ -28,17 +20,15 @@ export let tasks: Array<object> = []
 // function to modify task ( dynamic day)
 export const modifyTask = () => {}
 
-export const changeVariableName = (variable: string, value: string) => {
-  if (variable === "taskName") newTask.taskName = value
-  if (variable === "startTime") newTask.startTime = value
-  if (variable === "endTime") newTask.endTime = value
-  if (variable === "date") newTask.date = value
-  if (variable === "description") newTask.description = value
-  if (variable === "dayOfWeek") newTask.dayOfWeek = value
+export const changeInputValue = (variable: string, value: string) => {
+  // console.log(variable, value)
+  if (variable === "Task title") newTask.taskName = value
+  if (variable === "Start Time") newTask.startTime = value
+  if (variable === "End Time") newTask.endTime = value
+  if (variable === "Date") newTask.date = value
+  if (variable === "Description") newTask.description = value
+  if (variable === "DayOfWeek") newTask.dayOfWeek = value //get it with getDay
   // else throw new Error("Invalid variable name")
-
-  console.log("changing variable")
-  console.log(newTask)
 }
 
 export const createTask = () => {
@@ -49,16 +39,16 @@ export const createTask = () => {
     ...tasks,
     {
       id: uniqueId,
-      taskName: taskName,
-      startTime: startTime,
-      endTime: endTime,
-      date: date,
+      taskName: newTask.taskName,
+      startTime: newTask.startTime,
+      endTime: newTask.endTime,
+      date: newTask.date,
       isDone: false,
-      description: description,
+      description: newTask.description,
       dayOfWeek: "Mon",
     },
   ]
-  console.log(tasks)
+  // console.log(tasks)
 }
 
 // const obj: { [key: string]: any } = {}
