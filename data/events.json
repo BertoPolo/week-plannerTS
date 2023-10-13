@@ -8,7 +8,27 @@
       "date": "p",
       "isDone": false,
       "description": "p",
-      "dayOfWeek": "p"
+      "dayOfWeek": "Mon"
+    },
+    {
+      "id": "2",
+      "taskName": "2",
+      "startTime": "2",
+      "endTime": "2",
+      "date": "2",
+      "isDone": false,
+      "description": "2",
+      "dayOfWeek": "Mon"
+    },
+    {
+      "id": "3",
+      "taskName": "3",
+      "startTime": "3",
+      "endTime": "3",
+      "date": "3",
+      "isDone": false,
+      "description": "3",
+      "dayOfWeek": "Tue"
     }
   ]
 }

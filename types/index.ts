@@ -1,5 +1,5 @@
 //interfaces
-export interface Task {
+export interface ITask {
   id: string
   taskName: string
   startTime: string
@@ -10,11 +10,15 @@ export interface Task {
   dayOfWeek: "Mon" | "Tue" | "Wed" | "Thu" | "Fri" | "Sat" | "Sun"
 }
 
+export interface TaskProps {
+  tasks: Array<ITask>
+}
+
 export interface InputLabelProps {
   type: "text" | "email" | "password" | "textarea" | "date" | "time" // type of input
   title: string //label
   ph?: string // placeholder
-  variable: string // name of the variable what we want to change to create a new task
+  variable: string // name of the variable what we want to change when create/modify a task
 }
 export interface CustomButtonProps {
   launchFunction: Function

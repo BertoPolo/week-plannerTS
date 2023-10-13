@@ -1,12 +1,13 @@
 "use client"
 import React, { useState } from "react"
-import { tasks, wantWekends } from "../functions/functionsAndVars"
-// import { Task } from "@/types"
+import { wantWekends } from "../functions/functionsAndVars"
+import { ITask, TaskProps } from "@/types"
 
-const Day = () => {
+const Day = ({ tasks }: TaskProps) => {
   const [isDescription, setIsDescription] = useState(false) //enables description mode
   const weekDays = ["Mon", "Tue", "Wed", "Thu", "Fri"]
   const weekEndDays = ["Sat", "Sun"]
+  // console.log(tasks)
 
   return (
     <div className="columns-5">
@@ -20,19 +21,20 @@ const Day = () => {
                 <hr />
                 {/* sort by start time */}
                 {tasks &&
-                  tasks.map((task: any) => {
+                  tasks.map((task: ITask) => {
+                    // console.log(task)
                     return (
                       <div key={task.id}>
-                        {task.dayOfWeek === "Mon" && (
-                          <div>
-                            <p>
-                              <b className="pointer" onClick={() => setIsDescription(!isDescription)}>
-                                {task.title}
-                              </b>
-                            </p>
-                            {isDescription && <p>{task.description}</p>}
-                          </div>
-                        )}
+                        {/* {task.dayOfWeek === "Mon" && ( */}
+                        <div>
+                          <p>
+                            <b className="pointer" onClick={() => setIsDescription(!isDescription)}>
+                              {task.taskName}
+                            </b>
+                          </p>
+                          {isDescription && <p>{task.description}</p>}
+                        </div>
+                        {/* )} */}
                       </div>
                     )
                   })}

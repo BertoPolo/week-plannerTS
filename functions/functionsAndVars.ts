@@ -1,6 +1,6 @@
 "use client"
 import { v4 as uuidv4 } from "uuid"
-import { Task } from "@/types"
+import { ITask } from "@/types"
 
 export const wantWekends = false
 export const darkMode = false

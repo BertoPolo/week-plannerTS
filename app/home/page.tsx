@@ -3,12 +3,12 @@ import Link from "next/link"
 import InputAndLabel from "../../components/InputAndLabel"
 import CustomButton from "../../components/CustomButton"
 import Day from "../../components/Day"
-import { createTask, wantWekends } from "../../functions/functionsAndVars"
+import { createTask } from "../../functions/functionsAndVars"
 import { getAllTasks } from "@/api"
 
 const Home = async () => {
   const tasks = await getAllTasks()
-  console.log(tasks)
+  // console.log(tasks)
   // use .filter to select the task
   {
     /* the week is +1( have to be fixed, this is just to know the current week, but has to be navigable to other weeks) */
@@ -29,7 +29,7 @@ const Home = async () => {
         <h1 className="">Weekly Planner</h1>
         <h4>Week nº {getCurrentWeekNumber()}</h4>
       </div>
-      <Day />
+      <Day tasks={tasks} />
       {/* task creator form */}
       <div className="mt-3 grid justify-items-center">
         <InputAndLabel type="text" title="Task title" variable="taskName" ph="enter task here" />
