@@ -9,7 +9,6 @@ export interface Task {
   description: string
   dayOfWeek: "Mon" | "Tue" | "Wed" | "Thu" | "Fri" | "Sat" | "Sun"
 }
-// export interface
 
 export interface InputLabelProps {
   type: "text" | "email" | "password" | "textarea" | "date" | "time" // type of input

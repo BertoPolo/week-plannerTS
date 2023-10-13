@@ -8,7 +8,7 @@ export default function Home() {
         <b>Welcome</b>!
       </h1>
       <Link href="home" className="text-primary">
-        Move to home page
+        <span>Let`s g0!</span>
       </Link>
     </div>
   )
