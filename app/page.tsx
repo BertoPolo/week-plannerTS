@@ -1,4 +1,4 @@
-import Image from "next/image"
+// import Image from "next/image"
 import Link from "next/link"
 
 export default function Home() {
@@ -7,7 +7,7 @@ export default function Home() {
       <h1>
         <b>Welcome</b>!
       </h1>
-      <Link href="home" className="text-primary">
+      <Link to="/home" className="text-primary">
         <span>Let`s g0!</span>
       </Link>
     </div>
