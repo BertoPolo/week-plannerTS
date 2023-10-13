@@ -9,6 +9,9 @@ import { createTask, wantWekends } from "../../functions/functionsAndVars"
 const Home = () => {
   // use .filter to select the task
 
+  {
+    /* the week is +1( have to be fixed, this is just to know the current week, but has to be navigable to other weeks) */
+  }
   function getCurrentWeekNumber() {
     const today: any = new Date()
     const yearStart: any = new Date(today.getFullYear(), 0, 1)
@@ -24,8 +27,12 @@ const Home = () => {
       {/* separate navbar in other component */}
       <div className="navbar bg-base-100">
         <div className="flex-1">
-          <Link href="#home">TO DO lists</Link>
-          <Link href="#link">Full calendar</Link>
+          <Link href="/" className="mr-2">
+            Todo lists
+          </Link>
+          <Link href="/" className="">
+            Full calendar
+          </Link>
         </div>
         <div className="flex-none">
           <button className="btn btn-square btn-ghost" onClick={() => !wantWekends}>
@@ -43,7 +50,7 @@ const Home = () => {
       </div>
 
       <div>
-        <h1>Weekly Planner</h1>
+        <h1 className="prose-2xl">Weekly Planner</h1>
         <h4>Week nº {getCurrentWeekNumber()}</h4>
       </div>
       <Day />
