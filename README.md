@@ -1,6 +1,6 @@
 <h1>Week Planner</h1>
 
-Welcome to Week Planner, a simple web application built with Next.js, Tailwind CSS, and DaisyUI that allows you to organize your week effectively. Whether you're a student trying to manage your assignments, a professional planning your workweek, or just someone looking to stay organized, Week Planner has got you covered.
+Welcome to Week Planner, a simple web application built with TypeScript, Next.js, Tailwind CSS, and DaisyUI that allows you to organize your week effectively. Whether you're a student trying to manage your assignments, a professional planning your workweek, or just someone looking to stay organized, Week Planner has got you covered.
 
 <h3>Technologies Used</h3>
 <ul>
