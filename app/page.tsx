@@ -7,7 +7,7 @@ export default function Home() {
       <h1>
         <b>Welcome</b>!
       </h1>
-      <Link to="/home" className="text-primary">
+      <Link href="/home" className="text-primary">
         <span>Let`s g0!</span>
       </Link>
     </div>
