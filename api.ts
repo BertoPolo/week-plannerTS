@@ -1,4 +1,3 @@
-import { FormEventHandler } from "react"
 import { ITask } from "./types"
 
 const baseURL = "http://localhost:3001/"
@@ -49,7 +48,6 @@ export const modifyTask = async (task: ITask): Promise<ITask> => {
     }
   } catch (error) {
     console.log(error)
-    throw new Error("modify task failed")
   }
-  return task // just to take off the error
+  throw new Error("Modify task failed")
 }
