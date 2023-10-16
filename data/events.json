@@ -8,7 +8,7 @@
       "date": "date1",
       "isDone": false,
       "description": "description1",
-      "dayOfWeek": "Mon"
+      "dayOfWeek": "Monday"
     },
     {
       "id": "id2",
@@ -18,7 +18,7 @@
       "date": "date2",
       "isDone": false,
       "description": "description2",
-      "dayOfWeek": "Tue"
+      "dayOfWeek": "Tuesday"
     },
     {
       "id": "id3",
@@ -28,7 +28,7 @@
       "date": "date3",
       "isDone": false,
       "description": "description3",
-      "dayOfWeek": "Wed"
+      "dayOfWeek": "Wednesday"
     },
     {
       "id": "3afff816-e2c9-4b3b-b72e-28dc656c7729",

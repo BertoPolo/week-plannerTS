@@ -22,13 +22,18 @@ Welcome to Week Planner, a simple web application built with TypeScript, Next.js
     To run Week Planner locally on your machine, follow these steps:
 <ol>
     <li>Clone the repository:</li>
-    <b>git clone https://github.com/yourusername/week-planner.git</b>  
+    <b>git clone https://github.com/BertoPolo/week-planner.git</b>  
     <li>Install the dependencies:</li>
     <b>npm install</b>
-    <li>Start the development server:
+    <li>Start development UI:
     <b>npm run dev</b>
     Open your browser and go to http://localhost:3000 to use Week Planner.
     </li>
+    <li>Start the development server:
+    <b>npm run server</b>
+    Open your browser and go to http://localhost:3001 to see what's in the "DataBase".
+    </li>
+    
 </ol>
 <h3>Usage</h3>
 <ul>

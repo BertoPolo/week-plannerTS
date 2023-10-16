@@ -29,7 +29,7 @@ const Modal = () => {
     setNewStartTimeValue("")
     setNewEndTimeValue("")
     setNewDescriptionValue("")
-    setNewnewDayOfWeekValue("")
+    setNewnewDayOfWeekValue("Monday")
   }
 
   return (

@@ -6,9 +6,12 @@ const Navbar = () => {
     <div className="navbar bg-base-100">
       <div className="flex-1">
         <Link href="/" className="mr-2">
+          <b>HOME</b>
+        </Link>
+        <Link href="/todo" className="mr-2">
           Todo lists
         </Link>
-        <Link href="/" className="">
+        <Link href="/fullcalendar" className="">
           Full calendar
         </Link>
       </div>
