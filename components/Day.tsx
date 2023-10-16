@@ -5,6 +5,7 @@ import { ITask, TaskProps } from "@/types"
 const Day = ({ tasks }: TaskProps) => {
   const [isDescription, setIsDescription] = useState<boolean>(false) //enables description mode
   const [wantWeekends, setWantWeekends] = useState<boolean>(false)
+  const [selectedTask, setSelectedTask] = useState<string>("")
   let displayDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 
   if (wantWeekends) displayDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
@@ -19,8 +20,8 @@ const Day = ({ tasks }: TaskProps) => {
         {/*  */}
         {displayDays.map((weekDay) => {
           return (
-            <div className="card sm:w-auto bg-neutral text-neutral-content " key={weekDay}>
-              <div className="card-body">
+            <div className="card sm:w-auto bg-neutral text-neutral-content h-screen" key={weekDay}>
+              <div className="card-body ">
                 <h2 className="card-title">{weekDay} </h2>
                 <div>
                   <hr />
@@ -32,11 +33,16 @@ const Day = ({ tasks }: TaskProps) => {
                           {task.dayOfWeek === weekDay && (
                             <div>
                               <p>
-                                <b className="pointer" onClick={() => setIsDescription(!isDescription)}>
+                                <b
+                                  className="cursor-pointer"
+                                  onClick={() => {
+                                    setIsDescription(!isDescription), setSelectedTask(task.id)
+                                  }}
+                                >
                                   {task.taskName}
                                 </b>
                               </p>
-                              {isDescription && <p>{task.description}</p>}
+                              {isDescription && <small>{task.id === selectedTask && task.description}</small>}
                             </div>
                           )}
                         </div>
