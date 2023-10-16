@@ -1,9 +1,9 @@
 "use client"
-// import { Textarea } from "@nextui-org/react"
+import { v4 as uuidv4 } from "uuid"
 import React, { FormEventHandler, useState } from "react"
-// import { inputAndLabel } from "./InputAndLabel"
 
 const Modal = () => {
+  const [newIdValue, setNewIdValue] = useState<string>(uuidv4)
   const [newTaskNameValue, setNewTaskNameValue] = useState<string>("")
   const [newDateValue, setNewDateValue] = useState<string>("")
   const [newStartTimeValue, setNewStartTimeValue] = useState<string>("")
@@ -60,20 +60,6 @@ const Modal = () => {
           Close
         </label>
       </div>
-
-      {/* <button className="btn" onClick={() => setIsModal(true)}>
-        open modal
-      </button>
-      <dialog id="my_modal_2" className="modal">
-        <div className="modal-box">
-          <h3 className="font-bold text-lg">Hello!</h3>
-          <p className="py-4">Press ESC key or click outside to close</p>
-        </div>
-        <form method="dialog" className="modal-backdrop">
-          <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-        </form>
-      </dialog> */}
-      {/* {inputAndLabel} */}
     </div>
   )
 }

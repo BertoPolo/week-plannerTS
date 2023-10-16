@@ -1,9 +1,6 @@
 import Link from "next/link"
-// import { Textarea } from "@nextui-org/react"
-import CustomButton from "../../components/CustomButton"
 import Day from "../../components/Day"
 import Modal from "../../components/Modal"
-import { createTask } from "../../functions/functionsAndVars"
 import { getAllTasks } from "@/api"
 
 const Home = async () => {
@@ -29,17 +26,6 @@ const Home = async () => {
       </div>
       <Modal />
       <Day tasks={tasks} />
-
-      {/* task creator form */}
-      {/* <div className="mt-3 grid justify-items-center">
-        <InputAndLabel type="text" title="Task title" variable="taskName" ph="enter task here" />
-        <InputAndLabel type="date" title="Date" variable="date" />
-        <InputAndLabel type="time" title="Start Time" variable="startTime" />
-        <InputAndLabel type="time" title="End Time" variable="endTime" />
-        <InputAndLabel type="textarea" title="Description" variable="description" />
-
-        <CustomButton launchFunction={createTask} title="Create Task" />
-      </div> */}
     </>
   )
 }
