@@ -7,7 +7,7 @@ export interface ITask {
   date: string
   isDone: boolean
   description: string
-  dayOfWeek: "Mon" | "Tue" | "Wed" | "Thu" | "Fri" | "Sat" | "Sun"
+  // dayOfWeek: "Mon" | "Tue" | "Wed" | "Thu" | "Fri" | "Sat" | "Sun"
 }
 
 export interface TaskProps {

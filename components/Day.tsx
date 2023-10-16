@@ -4,7 +4,7 @@ import { wantWekends } from "../functions/functionsAndVars"
 import { ITask, TaskProps } from "@/types"
 
 const Day = ({ tasks }: TaskProps) => {
-  const [isDescription, setIsDescription] = useState(false) //enables description mode
+  const [isDescription, setIsDescription] = useState<boolean>(false) //enables description mode
   const weekDays = ["Mon", "Tue", "Wed", "Thu", "Fri"]
   const weekEndDays = ["Sat", "Sun"]
 
@@ -21,10 +21,9 @@ const Day = ({ tasks }: TaskProps) => {
                 {/* sort by start time */}
                 {tasks &&
                   tasks.map((task: ITask) => {
-                    // console.log(task)
                     return (
                       <div key={task.id}>
-                        {task.dayOfWeek === "Mon" && (
+                        {task.date === "date1" && (
                           <div>
                             <p>
                               <b className="pointer" onClick={() => setIsDescription(!isDescription)}>
