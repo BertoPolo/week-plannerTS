@@ -5,6 +5,7 @@ import { getAllTasks } from "@/api"
 
 const Home = async () => {
   const tasks = await getAllTasks()
+
   // function getCurrentWeekNumber() {
   //   /* the week is +1( have to be fixed, this is just to know the current week, but has to be navigable to other weeks) */
   //   const today: any = new Date()
