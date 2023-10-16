@@ -1,6 +1,6 @@
 // import Link from "next/link"
 import Day from "../../components/Day"
-import Modal from "../../components/Modal"
+import Modal from "../../components/ModalForm"
 import { getAllTasks } from "@/api"
 
 const Home = async () => {

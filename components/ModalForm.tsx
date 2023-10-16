@@ -5,10 +5,11 @@ import { createTask } from "@/api"
 
 const Modal = () => {
   const [newTaskNameValue, setNewTaskNameValue] = useState<string>("")
-  const [newDateValue, setNewDateValue] = useState<string>("")
+  // const [newDateValue, setNewDateValue] = useState<string>("")
   const [newStartTimeValue, setNewStartTimeValue] = useState<string>("")
   const [newEndTimeValue, setNewEndTimeValue] = useState<string>("")
   const [newDescriptionValue, setNewDescriptionValue] = useState<string>("")
+  const [newDayOfWeekValue, setNewnewDayOfWeekValue] = useState<any>("Monday") // solve this ANY type
 
   const handleNewTaskForm: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault()
@@ -17,22 +18,24 @@ const Modal = () => {
       taskName: newTaskNameValue,
       startTime: newStartTimeValue,
       endTime: newEndTimeValue,
-      date: newDateValue,
+      // date: newDateValue,
       isDone: false,
       description: newDescriptionValue,
+      dayOfWeek: newDayOfWeekValue,
     })
 
     setNewTaskNameValue("")
-    setNewDateValue("")
+    // setNewDateValue("")
     setNewStartTimeValue("")
     setNewEndTimeValue("")
     setNewDescriptionValue("")
+    setNewnewDayOfWeekValue("")
   }
 
   return (
     <div>
       {/* The button to open modal */}
-      <label htmlFor="AddTaskModal" className="btn">
+      <label htmlFor="AddTaskModal" className="btn my-5">
         Add task
       </label>
 
@@ -47,29 +50,51 @@ const Modal = () => {
               value={newTaskNameValue}
               onChange={(e) => setNewTaskNameValue(e.target.value)}
               title="Task title"
-              placeholder="enter task here"
+              placeholder="enter task title here"
               className="block"
             />
             {/* <input type="date" value={newDateValue} onChange={(e) => setNewDateValue(e.target.value)} title="Date" className="block" /> */}
+
+            {/* weekday dropdown */}
             <div className="dropdown dropdown-right">
               <label tabIndex={0} className="btn m-1">
-                Click
+                {newDayOfWeekValue}
               </label>
+
               <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                 <li>
-                  <a>day 1</a>
+                  <p onClick={() => setNewnewDayOfWeekValue("Monday")}>Monday</p>
                 </li>
+
                 <li>
-                  <a>day 2</a>
+                  <p onClick={() => setNewnewDayOfWeekValue("Tuesday")}>Tuesday</p>
                 </li>
+
                 <li>
-                  <a>day 3</a>
+                  <p onClick={() => setNewnewDayOfWeekValue("Wednesday")}>Wednesday</p>
                 </li>
+
                 <li>
-                  <a>day 4</a>
+                  <p onClick={() => setNewnewDayOfWeekValue("Thursday")}>Thursday</p>
+                </li>
+
+                <li>
+                  <p onClick={() => setNewnewDayOfWeekValue("Friday")}>Friday</p>
+                </li>
+
+                <li>
+                  <p onClick={() => setNewnewDayOfWeekValue("Saturday")}>Saturday</p>
+                </li>
+
+                <li>
+                  <p onClick={() => setNewnewDayOfWeekValue("Sunday")}>Sunday</p>
                 </li>
               </ul>
             </div>
+            {/* Start time */}
+            <label htmlFor="" className="block">
+              Start time
+            </label>
             <input
               type="time"
               value={newStartTimeValue}
@@ -77,7 +102,10 @@ const Modal = () => {
               title="Start Time"
               className="block"
             />
+            {/* End time */}
+            <label htmlFor="">End time</label>
             <input type="time" value={newEndTimeValue} onChange={(e) => setNewEndTimeValue(e.target.value)} title="End Time" className="block" />
+            {/* Description */}
             <textarea
               className="textarea textarea-info"
               value={newDescriptionValue}
@@ -85,6 +113,7 @@ const Modal = () => {
               title="Description"
               placeholder="Insert description"
             />
+
             <button type="submit" className="btn block">
               Submit
             </button>

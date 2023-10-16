@@ -1,12 +1,11 @@
 "use client"
 import React, { useState } from "react"
-import { wantWekends } from "../functions/functionsAndVars"
 import { ITask, TaskProps } from "@/types"
 
 const Day = ({ tasks }: TaskProps) => {
   const [isDescription, setIsDescription] = useState<boolean>(false) //enables description mode
-  const weekDays = ["Mon", "Tue", "Wed", "Thu", "Fri"]
-  const weekEndDays = ["Sat", "Sun"]
+  const weekDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+  const weekEndDays = ["Saturday", "Sunday"]
 
   return (
     <div className="columns-5">
@@ -23,16 +22,16 @@ const Day = ({ tasks }: TaskProps) => {
                   tasks.map((task: ITask) => {
                     return (
                       <div key={task.id}>
-                        {task.date === "date1" && (
-                          <div>
-                            <p>
-                              <b className="pointer" onClick={() => setIsDescription(!isDescription)}>
-                                {task.taskName}
-                              </b>
-                            </p>
-                            {isDescription && <p>{task.description}</p>}
-                          </div>
-                        )}
+                        {/* {task.date === "date1" && ( */}
+                        <div>
+                          <p>
+                            <b className="pointer" onClick={() => setIsDescription(!isDescription)}>
+                              {task.taskName}
+                            </b>
+                          </p>
+                          {isDescription && <p>{task.description}</p>}
+                        </div>
+                        {/* )} */}
                       </div>
                     )
                   })}
