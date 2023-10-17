@@ -8,9 +8,20 @@ const Day = ({ tasks }: TaskProps) => {
   const [isDescription, setIsDescription] = useState<boolean>(false) //enables description mode
   const [wantWeekends, setWantWeekends] = useState<boolean>(false)
   const [selectedTask, setSelectedTask] = useState<string>("")
-  let displayDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 
-  if (wantWeekends) displayDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+  let displayDays = wantWeekends
+    ? ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    : ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+
+  tasks.sort((a, b) => {
+    if (a.startTime < b.startTime) {
+      return -1
+    }
+    if (a.startTime > b.startTime) {
+      return 1
+    }
+    return 0
+  })
 
   return (
     <>

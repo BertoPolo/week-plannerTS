@@ -13,6 +13,14 @@ const Modal = () => {
   const [newDayOfWeekValue, setNewnewDayOfWeekValue] = useState<any>("Monday") // solve this ANY type
 
   const router = useRouter()
+  const resetStates = () => {
+    setNewTaskNameValue("")
+    // setNewDateValue("")
+    setNewStartTimeValue("")
+    setNewEndTimeValue("")
+    setNewDescriptionValue("")
+    setNewnewDayOfWeekValue("Monday")
+  }
 
   const handleNewTaskForm: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault()
@@ -27,13 +35,7 @@ const Modal = () => {
       description: newDescriptionValue,
       dayOfWeek: newDayOfWeekValue,
     })
-    //reset states
-    setNewTaskNameValue("")
-    // setNewDateValue("")
-    setNewStartTimeValue("")
-    setNewEndTimeValue("")
-    setNewDescriptionValue("")
-    setNewnewDayOfWeekValue("Monday")
+    resetStates()
     //refreshing
     router.refresh()
   }
