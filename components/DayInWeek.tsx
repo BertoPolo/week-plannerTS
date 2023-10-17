@@ -1,6 +1,8 @@
 "use client"
 import React, { useState } from "react"
 import { ITask, TaskProps } from "@/types"
+import { FiEdit } from "react-icons/fi"
+import { ImBin } from "react-icons/im"
 
 const Day = ({ tasks }: TaskProps) => {
   const [isDescription, setIsDescription] = useState<boolean>(false) //enables description mode
@@ -32,7 +34,7 @@ const Day = ({ tasks }: TaskProps) => {
                         <div key={task.id}>
                           {task.dayOfWeek === weekDay && (
                             <div>
-                              <p>
+                              <p className="flex">
                                 <b
                                   className="cursor-pointer"
                                   onClick={() => {
@@ -41,7 +43,12 @@ const Day = ({ tasks }: TaskProps) => {
                                 >
                                   {task.taskName}
                                 </b>
+                                <span className="flex">
+                                  <FiEdit size={15} className="cursor-pointer text-blue-400 mx-3" />
+                                  <ImBin size={15} className="cursor-pointer text-red-600" />
+                                </span>
                               </p>
+
                               {isDescription && <small>{task.id === selectedTask && task.description}</small>}
                             </div>
                           )}

@@ -110,6 +110,15 @@
       "isDone": false,
       "description": "rockNroll",
       "dayOfWeek": "Tuesday"
+    },
+    {
+      "id": "48ff19dd-966a-4346-b8bc-61f9e82aba52",
+      "taskName": "Work meet",
+      "startTime": "16:02",
+      "endTime": "16:08",
+      "isDone": false,
+      "description": "Presentacion de equipo",
+      "dayOfWeek": "Sunday"
     }
   ]
 }

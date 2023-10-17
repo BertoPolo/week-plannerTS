@@ -32,19 +32,19 @@ export const createTask = async (task: ITask): Promise<ITask> => {
   throw new Error("Posting new data not working properly")
 }
 
-//not yet in use nor ready
+//not yet in use
 export const modifyTask = async (task: ITask): Promise<ITask> => {
   try {
-    const res = await fetch(`${baseURL}tasks`, {
+    const res = await fetch(`${baseURL}tasks/${task.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-
       body: JSON.stringify(task),
     })
     if (res.ok) {
-      return task // just to take off the error
+      const updatedTask = await res.json()
+      return updatedTask
     }
   } catch (error) {
     console.log(error)
@@ -55,8 +55,8 @@ export const modifyTask = async (task: ITask): Promise<ITask> => {
 //not yet in use nor ready
 export const deleteTask = async (task: ITask): Promise<ITask> => {
   try {
-    const res = await fetch(`${baseURL}tasks`, {
-      method: "PUT",
+    const res = await fetch(`${baseURL}tasks/${task.id}`, {
+      method: "DELETE",
       headers: {
         "Content-Type": "application/json",
       },
@@ -64,7 +64,8 @@ export const deleteTask = async (task: ITask): Promise<ITask> => {
       body: JSON.stringify(task),
     })
     if (res.ok) {
-      return task // just to take off the error
+      const updatedTask = await res.json()
+      return updatedTask
     }
   } catch (error) {
     console.log(error)

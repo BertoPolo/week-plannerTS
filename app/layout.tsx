@@ -8,12 +8,6 @@ import Navbar from "@/components/Navbar"
 
 const inter = Inter({ subsets: ["latin"] })
 
-// let currentTheme = "light"
-
-// export const changeTheme = () => {
-//   currentTheme = "dark"
-// }
-
 export const metadata: Metadata = {
   title: "Week Planner",
   description: "Organize your weekly schedules",
