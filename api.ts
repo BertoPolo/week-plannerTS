@@ -51,3 +51,23 @@ export const modifyTask = async (task: ITask): Promise<ITask> => {
   }
   throw new Error("Modify task failed")
 }
+
+//not yet in use nor ready
+export const deleteTask = async (task: ITask): Promise<ITask> => {
+  try {
+    const res = await fetch(`${baseURL}tasks`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+
+      body: JSON.stringify(task),
+    })
+    if (res.ok) {
+      return task // just to take off the error
+    }
+  } catch (error) {
+    console.log(error)
+  }
+  throw new Error("Delete task failed")
+}

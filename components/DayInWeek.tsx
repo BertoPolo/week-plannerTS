@@ -22,7 +22,7 @@ const Day = ({ tasks }: TaskProps) => {
           return (
             <div className="card sm:w-auto bg-neutral text-neutral-content h-screen" key={weekDay}>
               <div className="card-body ">
-                <h2 className="card-title">{weekDay} </h2>
+                <h2 className="card-title cursor-pointer">{weekDay} </h2>
                 <div>
                   <hr />
                   {/* sort by start time */}

@@ -1,5 +1,6 @@
 import Link from "next/link"
 import React from "react"
+import ThemeButton from "@/app/ThemeButton"
 
 const Navbar = () => {
   return (
@@ -14,6 +15,7 @@ const Navbar = () => {
         <Link href="/fullcalendar" className="">
           Full calendar
         </Link>
+        <ThemeButton />
       </div>
       <div className="flex-none">
         {/* <button className="btn btn-square btn-ghost" onClick={() => !wantWekends}>

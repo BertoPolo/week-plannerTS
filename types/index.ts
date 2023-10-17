@@ -13,7 +13,6 @@ export interface ITask {
 export interface TaskProps {
   tasks: Array<ITask>
 }
-
 // not used with server approach
 // export interface InputLabelProps {
 //   type: "text" | "email" | "password" | "textarea" | "date" | "time" // type of input
