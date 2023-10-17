@@ -2,7 +2,7 @@
   "tasks": [
     {
       "id": "id1",
-      "taskName": "taskName1",
+      "taskName": "Dentist",
       "startTime": "startTime1",
       "endTime": "endTime1",
       "date": "date1",
@@ -12,7 +12,7 @@
     },
     {
       "id": "id2",
-      "taskName": "taskName2",
+      "taskName": "Shop",
       "startTime": "startTime2",
       "endTime": "endTime1",
       "date": "date2",
@@ -22,7 +22,7 @@
     },
     {
       "id": "id3",
-      "taskName": "taskName3",
+      "taskName": "Grocieries",
       "startTime": "startTime3",
       "endTime": "endTime3",
       "date": "date3",
@@ -32,7 +32,7 @@
     },
     {
       "id": "3afff816-e2c9-4b3b-b72e-28dc656c7729",
-      "taskName": "sadsd",
+      "taskName": "Home visits",
       "startTime": "14:26",
       "endTime": "14:31",
       "isDone": false,
@@ -41,7 +41,7 @@
     },
     {
       "id": "3afff816-e2c9-4b3b-b72e",
-      "taskName": "ss21qwe",
+      "taskName": "Yoga",
       "startTime": "14:26",
       "endTime": "14:31",
       "isDone": false,
@@ -50,7 +50,7 @@
     },
     {
       "id": "3afff816-e2c9-4b3b-b72e-28dukc656c7729",
-      "taskName": "23t3f",
+      "taskName": "Ballet",
       "startTime": "14:26",
       "endTime": "14:31",
       "isDone": false,
@@ -100,6 +100,15 @@
       "endTime": "09:34",
       "isDone": false,
       "description": "siuuu",
+      "dayOfWeek": "Tuesday"
+    },
+    {
+      "id": "570911ec-7b38-499e-9acd-0b39491ec10a",
+      "taskName": "Party tonight",
+      "startTime": "22:24",
+      "endTime": "04:24",
+      "isDone": false,
+      "description": "rockNroll",
       "dayOfWeek": "Tuesday"
     }
   ]

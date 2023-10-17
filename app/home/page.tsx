@@ -1,5 +1,5 @@
 // import Link from "next/link"
-import Day from "../../components/Day"
+import Day from "../../components/DayInWeek"
 import Modal from "../../components/ModalForm"
 import { getAllTasks } from "@/api"
 

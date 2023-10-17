@@ -2,6 +2,7 @@
 import { v4 as uuidv4 } from "uuid"
 import React, { FormEventHandler, useState } from "react"
 import { createTask } from "@/api"
+import { useRouter } from "next/navigation"
 
 const Modal = () => {
   const [newTaskNameValue, setNewTaskNameValue] = useState<string>("")
@@ -11,8 +12,11 @@ const Modal = () => {
   const [newDescriptionValue, setNewDescriptionValue] = useState<string>("")
   const [newDayOfWeekValue, setNewnewDayOfWeekValue] = useState<any>("Monday") // solve this ANY type
 
+  const router = useRouter()
+
   const handleNewTaskForm: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault()
+
     await createTask({
       id: uuidv4(),
       taskName: newTaskNameValue,
@@ -23,13 +27,15 @@ const Modal = () => {
       description: newDescriptionValue,
       dayOfWeek: newDayOfWeekValue,
     })
-
+    //reset states
     setNewTaskNameValue("")
     // setNewDateValue("")
     setNewStartTimeValue("")
     setNewEndTimeValue("")
     setNewDescriptionValue("")
     setNewnewDayOfWeekValue("Monday")
+    //refreshing
+    router.refresh()
   }
 
   return (
@@ -42,7 +48,7 @@ const Modal = () => {
       <input type="checkbox" id="AddTaskModal" className="modal-toggle" />
       <div className="modal">
         <div className="modal-box">
-          <h3 className="text-lg font-bold">Add your task!</h3>
+          <h3 className="text-lg font-bold mb-4">Add your task!</h3>
 
           <form onSubmit={handleNewTaskForm}>
             <input
@@ -50,7 +56,7 @@ const Modal = () => {
               value={newTaskNameValue}
               onChange={(e) => setNewTaskNameValue(e.target.value)}
               title="Task title"
-              placeholder="enter task title here"
+              placeholder="--> enter task title here"
               className="block"
               required
             />
