@@ -68,12 +68,39 @@
     },
     {
       "id": "a195f70e-2056-4f3b-a040-33dffd2061b1",
-      "taskName": "",
+      "taskName": "Prueba con Patrick",
       "startTime": "17:22",
       "endTime": "17:24",
       "isDone": false,
       "description": "xfgdfg",
       "dayOfWeek": "Friday"
+    },
+    {
+      "id": "08b552c1-e795-454c-a054-1b32ca8f5f6f",
+      "taskName": "nana",
+      "startTime": "09:27",
+      "endTime": "09:31",
+      "isDone": false,
+      "description": "vamo a ve",
+      "dayOfWeek": "Sunday"
+    },
+    {
+      "id": "fd3c533d-0129-4ca2-8de5-3c5ec6a812d8",
+      "taskName": "nana",
+      "startTime": "09:27",
+      "endTime": "09:31",
+      "isDone": false,
+      "description": "vamo a ve",
+      "dayOfWeek": "Sunday"
+    },
+    {
+      "id": "ee987762-bf7e-4b8e-919a-5dc3f8a06b91",
+      "taskName": "hey hey hey",
+      "startTime": "09:29",
+      "endTime": "09:34",
+      "isDone": false,
+      "description": "siuuu",
+      "dayOfWeek": "Tuesday"
     }
   ]
 }

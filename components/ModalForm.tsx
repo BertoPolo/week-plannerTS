@@ -52,6 +52,7 @@ const Modal = () => {
               title="Task title"
               placeholder="enter task title here"
               className="block"
+              required
             />
             {/* <input type="date" value={newDateValue} onChange={(e) => setNewDateValue(e.target.value)} title="Date" className="block" /> */}
 
@@ -101,10 +102,18 @@ const Modal = () => {
               onChange={(e) => setNewStartTimeValue(e.target.value)}
               title="Start Time"
               className="block"
+              required
             />
             {/* End time */}
             <label htmlFor="">End time</label>
-            <input type="time" value={newEndTimeValue} onChange={(e) => setNewEndTimeValue(e.target.value)} title="End Time" className="block" />
+            <input
+              type="time"
+              value={newEndTimeValue}
+              onChange={(e) => setNewEndTimeValue(e.target.value)}
+              title="End Time"
+              className="block"
+              required
+            />
             {/* Description */}
             <textarea
               className="textarea textarea-info"
@@ -112,6 +121,7 @@ const Modal = () => {
               onChange={(e) => setNewDescriptionValue(e.target.value)}
               title="Description"
               placeholder="Insert description"
+              required
             />
 
             <button type="submit" className="btn block">
