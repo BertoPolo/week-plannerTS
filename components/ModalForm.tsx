@@ -39,6 +39,23 @@ const Modal = () => {
     //refreshing
     router.refresh()
   }
+  const handleEditTaskForm: FormEventHandler<HTMLFormElement> = async (e) => {
+    e.preventDefault()
+
+    await createTask({
+      id: task.id, // encontrar manera de saber su anterior id, talvez del event click?
+      taskName: newTaskNameValue,
+      startTime: newStartTimeValue,
+      endTime: newEndTimeValue,
+      // date: newDateValue,
+      isDone: false,
+      description: newDescriptionValue,
+      dayOfWeek: newDayOfWeekValue,
+    })
+    resetStates()
+    //refreshing
+    router.refresh()
+  }
 
   return (
     <div>
