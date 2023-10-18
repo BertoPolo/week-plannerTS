@@ -1,7 +1,7 @@
 "use client"
 import { v4 as uuidv4 } from "uuid"
 import React, { FormEventHandler, useState } from "react"
-import { createTask } from "@/api"
+import { createTask, modifyTask } from "@/api"
 import { useRouter } from "next/navigation"
 
 const Modal = () => {
@@ -42,7 +42,7 @@ const Modal = () => {
   const handleEditTaskForm: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault()
 
-    await createTask({
+    await modifyTask({
       id: task.id, // encontrar manera de saber su anterior id, talvez del event click?
       taskName: newTaskNameValue,
       startTime: newStartTimeValue,

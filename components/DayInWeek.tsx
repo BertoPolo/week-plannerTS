@@ -38,7 +38,7 @@ const Day = ({ tasks }: TaskProps) => {
                 <h2 className="card-title cursor-pointer">{weekDay} </h2>
                 <div>
                   <hr />
-                  {/* sort by start time */}
+
                   {tasks &&
                     tasks.map((task: ITask) => {
                       return (
