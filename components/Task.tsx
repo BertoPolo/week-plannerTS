@@ -1,7 +1,6 @@
 "use client"
-import { v4 as uuidv4 } from "uuid"
 import React, { FormEventHandler, useState } from "react"
-import { createTask, modifyTask } from "@/api"
+import { modifyTask } from "@/api"
 import { useRouter } from "next/navigation"
 import { TaskProps, ITask } from "@/types"
 import { FiEdit } from "react-icons/fi"
@@ -31,7 +30,6 @@ const Task = ({ tasks, weekDay }: TaskProps) => {
   }
 
   const changeStates = (valuesObj: ITask) => {
-    //all the "sets" and pass the values fron valuesObj
     setSelectedId(valuesObj.id)
     setSelectedTaskName(valuesObj.taskName)
     setSelectedStartTime(valuesObj.startTime)
@@ -71,7 +69,7 @@ const Task = ({ tasks, weekDay }: TaskProps) => {
                     <b
                       className="cursor-pointer"
                       onClick={() => {
-                        setIsDescription(!isDescription), changeStates(task)
+                        setIsDescription(!isDescription), setSelectedId(task.id)
                       }}
                     >
                       {task.taskName}
@@ -97,7 +95,6 @@ const Task = ({ tasks, weekDay }: TaskProps) => {
 
       {/*  Editing task form / modal*/}
       <>
-        {/* con el taskID deberias filtrar y rellenar los states .. mirate el video */}
         <input type="checkbox" id="EditTaskModal" className="modal-toggle" />
         <div className="modal">
           <div className="modal-box">

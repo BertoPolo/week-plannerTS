@@ -3,8 +3,8 @@
     {
       "id": "id1",
       "taskName": "Dentist",
-      "startTime": "startTime1",
-      "endTime": "endTime1",
+      "startTime": "14:26",
+      "endTime": "14:26",
       "date": "date1",
       "isDone": false,
       "description": "description1",
@@ -13,8 +13,8 @@
     {
       "id": "id2",
       "taskName": "Shop",
-      "startTime": "startTime2",
-      "endTime": "endTime1",
+      "startTime": "14:26",
+      "endTime": "14:28",
       "date": "date2",
       "isDone": false,
       "description": "description2",
@@ -23,8 +23,8 @@
     {
       "id": "id3",
       "taskName": "Grocieries",
-      "startTime": "startTime3",
-      "endTime": "endTime3",
+      "startTime": "14:21",
+      "endTime": "14:26",
       "date": "date3",
       "isDone": false,
       "description": "description3",
