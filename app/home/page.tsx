@@ -1,7 +1,8 @@
 // import Link from "next/link"
-import Day from "../../components/DayInWeek"
-import Modal from "../../components/ModalForm"
+import DayInWeek from "../../components/DayInWeek"
+// import Modal from "../../components/ModalForm"
 import { getAllTasks } from "@/api"
+import AddTask from "@/components/AddTask"
 
 const Home = async () => {
   const tasks = await getAllTasks()
@@ -23,8 +24,9 @@ const Home = async () => {
         <h1 className="text-xl">Weekly Planner</h1>
         {/* <h4>Week nº {getCurrentWeekNumber()}</h4> */}
       </div>
-      <Modal />
-      <Day tasks={tasks} />
+      {/* <Modal /> */}
+      <AddTask />
+      <DayInWeek tasks={tasks} />
     </div>
   )
 }

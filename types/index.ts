@@ -12,6 +12,7 @@ export interface ITask {
 
 export interface TaskProps {
   tasks: Array<ITask>
+  weekDay?: string
 }
 // not used with server approach
 // export interface InputLabelProps {
