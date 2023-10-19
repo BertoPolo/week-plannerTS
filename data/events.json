@@ -119,6 +119,15 @@
       "isDone": false,
       "description": "Presentacion de equipo",
       "dayOfWeek": "Sunday"
+    },
+    {
+      "id": "3fc72e9d-98b5-495b-a71c-c8d46e48e465",
+      "taskName": "SIUU!!!",
+      "startTime": "15:34",
+      "endTime": "14:40",
+      "isDone": false,
+      "description": "Transition completed",
+      "dayOfWeek": "Monday"
     }
   ]
 }
