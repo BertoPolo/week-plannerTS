@@ -58,7 +58,7 @@ const Task = ({ tasks, weekDay }: TaskProps) => {
 
   return (
     <>
-      {/* if task. display every day with it's tasks */}
+      {/* display every day with it's tasks */}
       {tasks &&
         tasks.map((task: ITask) => {
           return (
@@ -76,8 +76,19 @@ const Task = ({ tasks, weekDay }: TaskProps) => {
                     </b>
                     {/* icons EDIT and DELETE */}
                     <span className="flex">
-                      <label htmlFor="EditTaskModal">
-                        <FiEdit size={15} className="cursor-pointer text-blue-400 mx-3" onClick={() => changeStates(task)} />
+                      <label
+                        htmlFor="EditTaskModal"
+                        onClick={() => {
+                          setSelectedTaskName("hello")
+                        }}
+                      >
+                        <FiEdit
+                          size={15}
+                          className="cursor-pointer text-blue-400 mx-3"
+                          onClick={() => {
+                            setSelectedTaskName("hello"), console.log(selectedTaskName)
+                          }}
+                        />
                       </label>
 
                       <label htmlFor="DeleteTaskModal">
