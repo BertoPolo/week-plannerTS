@@ -26,13 +26,13 @@ const DayInWeek = ({ tasks }: TaskProps) => {
       <button className="btn btn-outline btn-xs mb-2 block" onClick={() => setWantWeekends(!wantWeekends)}>
         Weekends On/Off
       </button>
-
+      {/* Daisy card */}
       <div className={wantWeekends ? "columns-7" : "columns-5"}>
         {/*  */}
         {displayDays.map((weekDay) => {
           return (
             <div className="card sm:w-auto bg-neutral text-neutral-content h-screen" key={weekDay}>
-              <div className="card-body ">
+              <div className="card-body p-3">
                 <h2 className="card-title cursor-pointer">{weekDay} </h2>
                 <div>
                   <hr />
