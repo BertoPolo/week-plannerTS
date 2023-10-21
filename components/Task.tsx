@@ -80,13 +80,13 @@ const Task = ({ tasks, weekDay }: TaskProps) => {
       {tasks &&
         tasks.map((task: ITask) => {
           return (
-            <div key={task.id} className="columns-3">
+            <div key={task.id}>
               {task.dayOfWeek === weekDay && (
-                <div>
+                <div className="grid grid-cols-3 mt-2">
                   <small className="text-xs">{task.startTime}</small>
-                  <p className="flex">
+                  <p className="flex col-span-2">
                     <b
-                      className="cursor-pointer"
+                      className="cursor-pointer truncate "
                       onClick={() => {
                         setIsDescription(!isDescription), setSelectedId(task.id)
                       }}
@@ -94,7 +94,7 @@ const Task = ({ tasks, weekDay }: TaskProps) => {
                       {task.taskName}
                     </b>
                     {/* icons EDIT and DELETE */}
-                    <span className="flex">
+                    <span className="flex ">
                       <label htmlFor="EditTaskModal">
                         <FiEdit size={15} className="cursor-pointer text-blue-400 mx-3" onClick={() => changeStates(task)} />
                       </label>
