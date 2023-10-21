@@ -16,7 +16,7 @@ const Task = ({ tasks, weekDay }: TaskProps) => {
   const [selectedStartTime, setSelectedStartTime] = useState<string>("")
   const [selectedEndTime, setSelectedEndTime] = useState<string>("")
   const [selectedDescription, setSelectedDescription] = useState<string>("")
-  const [selectedDayOfWeek, setSelectedDayOfWeek] = useState<any>("Monday") // solve this ANY type
+  const [selectedDayOfWeek, setSelectedDayOfWeek] = useState<ITask["dayOfWeek"]>("Monday")
 
   const router = useRouter()
 

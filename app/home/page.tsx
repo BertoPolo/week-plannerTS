@@ -21,7 +21,7 @@ const Home = async () => {
   return (
     <div className="mx-6">
       <div>
-        <h1 className="text-xl">Weekly Planner</h1>
+        {/* <h1 className="text-xl">Weekly Planner</h1> */}
         {/* <h4>Week nº {getCurrentWeekNumber()}</h4> */}
       </div>
       {/* <Modal /> */}
