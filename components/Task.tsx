@@ -82,36 +82,38 @@ const Task = ({ tasks, weekDay }: TaskProps) => {
           return (
             <div key={task.id}>
               {task.dayOfWeek === weekDay && (
-                <div className="grid grid-cols-3 mt-2">
-                  <small className="text-xs">{task.startTime}</small>
-                  <p className="flex col-span-2">
-                    <b
-                      className="cursor-pointer truncate "
-                      onClick={() => {
-                        setIsDescription(!isDescription), setSelectedId(task.id)
-                      }}
-                    >
-                      {task.taskName}
-                    </b>
-                    {/* icons EDIT and DELETE */}
-                    <span className="flex ">
-                      <label htmlFor="EditTaskModal">
-                        <FiEdit size={15} className="cursor-pointer text-blue-400 mx-3" onClick={() => changeStates(task)} />
-                      </label>
+                <div>
+                  <div className="grid grid-cols-4 mt-2">
+                    <small className="text-xs">{task.startTime}</small>
+                    <p className="flex col-span-3">
+                      <b
+                        className="cursor-pointer truncate "
+                        onClick={() => {
+                          setIsDescription(!isDescription), setSelectedId(task.id)
+                        }}
+                      >
+                        {task.taskName}
+                      </b>
+                      {/* icons EDIT and DELETE */}
+                      <span className="flex ">
+                        <label htmlFor="EditTaskModal">
+                          <FiEdit size={15} className="cursor-pointer text-blue-400 mx-3" onClick={() => changeStates(task)} />
+                        </label>
 
-                      <label htmlFor="DeleteTaskModal">
-                        <ImBin
-                          size={15}
-                          className="cursor-pointer text-red-600"
-                          onClick={(e: any) => {
-                            confirm("Are you sure to delete this") ? handleDeleteTaskForm(e) : console.log("Task not deleted")
-                          }}
-                        />
-                      </label>
-                    </span>
-                  </p>
+                        <label htmlFor="DeleteTaskModal">
+                          <ImBin
+                            size={15}
+                            className="cursor-pointer text-red-600"
+                            onClick={(e: any) => {
+                              confirm("Are you sure to delete this") ? handleDeleteTaskForm(e) : console.log("Task not deleted")
+                            }}
+                          />
+                        </label>
+                      </span>
+                    </p>
 
-                  {/* display Description */}
+                    {/* display Description */}
+                  </div>
                   {isDescription && <small>{task.id === selectedId && task.description}</small>}
                 </div>
               )}
