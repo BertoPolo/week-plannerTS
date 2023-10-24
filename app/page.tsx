@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export default function Home() {
   return (
-    <div className="mx-6">
+    <div className="">
       <h1>
         <b>Welcome</b>!
       </h1>

@@ -19,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Providers>
           <Navbar />
-          {children}
+          <div className="mx-7">{children}</div>
           <Footer />
         </Providers>
       </body>

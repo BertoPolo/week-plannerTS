@@ -2,6 +2,7 @@
 import React, { useState } from "react"
 import { ITask, TaskProps } from "@/types"
 import Task from "./Task"
+import Link from "next/link"
 
 const DayInWeek = ({ tasks }: TaskProps) => {
   const [isDescription, setIsDescription] = useState<boolean>(false) //enables description mode
@@ -33,7 +34,11 @@ const DayInWeek = ({ tasks }: TaskProps) => {
           return (
             <div className="card sm:w-auto bg-neutral text-neutral-content h-screen" key={weekDay}>
               <div className="card-body p-3">
-                <h2 className="card-title cursor-pointer">{weekDay} </h2>
+                <h2 className="card-title cursor-pointer">
+                  <Link href={`/home/singleday/${weekDay}`} className="text-primary">
+                    {weekDay}
+                  </Link>
+                </h2>
                 <div>
                   <hr />
                   <Task tasks={tasks} weekDay={weekDay} />
