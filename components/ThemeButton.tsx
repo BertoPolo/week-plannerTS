@@ -16,7 +16,7 @@ const ThemeButton = () => {
 
   return (
     <div className="ml-3">
-      <label className="swap swap-rotate" onClick={() => setTheme("dark")}>
+      <label className="swap swap-rotate">
         {/* this hidden checkbox controls the state */}
         <input type="checkbox" />
 

@@ -2,11 +2,8 @@ import "./globals.css"
 import type { Metadata } from "next"
 import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
-// import { Inter } from "next/font/google"
 import Providers from "./Providers"
-import ThemeButton from "@/components/ThemeButton"
-
-// import { currentTheme } from "./ThemeButton"
+// import { Inter } from "next/font/google"
 
 // const inter = Inter({ subsets: ["latin"] })
 
@@ -18,12 +15,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      {/* <body className={inter.className} data-theme={currentTheme}> */}
+      {/* <body className={inter.className}*/}
       <body>
-        <Navbar />
-        <ThemeButton />
-        <Providers>{children}</Providers>
-        <Footer />
+        <Providers>
+          <Navbar />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   )
