@@ -13,8 +13,21 @@ const config: Config = {
   plugins: [require("daisyui")],
 
   // daisyui: {
-  //   themes: true,
-  //   // ["light", "dark", "cupcake", "luxury"],
+  //   themes: [
+  //     {
+  //       dark: {
+  //         primary: "#f45350",
+  //         secondary: "#69e592",
+  //         accent: "#59eae0",
+  //         neutral: "#181826",
+  //         "base-100": "#2f2f51",
+  //         info: "#2f92d0",
+  //         success: "#22dd92",
+  //         warning: "#f6bb09",
+  //         error: "#e53e6a",
+  //       },
+  //     },
+  //   ],
   // },
 }
 export default config
