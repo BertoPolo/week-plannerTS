@@ -36,10 +36,10 @@ const AddTask = () => {
       description: newDescriptionValue,
       dayOfWeek: newDayOfWeekValue,
     })
+
+    // closing the modal after submission
     const modalCheckbox = document.getElementById("AddTaskModal") as HTMLInputElement | null
-    if (modalCheckbox) {
-      modalCheckbox.checked = false
-    }
+    if (modalCheckbox) modalCheckbox.checked = false
     resetStates()
     //refreshing
     router.refresh()

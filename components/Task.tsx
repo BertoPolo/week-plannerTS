@@ -51,11 +51,9 @@ const Task = ({ tasks, weekDay }: TaskProps) => {
       description: selectedDescription,
       dayOfWeek: selectedDayOfWeek,
     })
-
+    // closing the modal after submission
     const modalCheckbox = document.getElementById("EditTaskModal") as HTMLInputElement | null
-    if (modalCheckbox) {
-      modalCheckbox.checked = false
-    }
+    if (modalCheckbox) modalCheckbox.checked = false
 
     resetStates()
     //refreshing
