@@ -13,7 +13,7 @@ export const getTasks = async (filter?: string): Promise<ITask[]> => {
   } catch (error) {
     console.log(error)
   }
-  throw new Error("data fetching not working properly")
+  throw new Error("Data fetching failed")
 }
 
 export const createTask = async (task: ITask): Promise<ITask> => {
@@ -53,15 +53,13 @@ export const modifyTask = async (task: ITask): Promise<ITask> => {
   throw new Error("Modify task failed")
 }
 
-//not yet in use nor ready
 export const deleteTask = async (id: string): Promise<void> => {
   try {
     await fetch(`${baseURL}tasks/${id}`, {
       method: "DELETE",
     })
-    return
   } catch (error) {
     console.log(error)
+    throw new Error("Delete task failed")
   }
-  throw new Error("Delete task failed")
 }

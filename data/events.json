@@ -1,133 +1,130 @@
 {
   "tasks": [
     {
-      "id": "id1",
-      "taskName": "Dentist",
-      "startTime": "14:26",
-      "date": "date1",
-      "endTime": "14:26",
+      "id": "4a6e889c-532e-4b9d-9b29-761fcdcf19e1",
+      "taskName": "Workout",
+      "startTime": "07:00",
+      "endTime": "08:00",
       "isDone": false,
-      "description": "lorem ipsum dolor sit amet, consectetur adip lorem, sed do eiusmod tempor incididunt ut labore",
-      "dayOfWeek": "Monday"
-    },
-    {
-      "id": "id2",
-      "taskName": "Shop",
-      "startTime": "14:26",
-      "endTime": "14:28",
-      "date": "date2",
-      "isDone": false,
-      "description": "description2",
+      "description": "Morning exercise",
       "dayOfWeek": "Tuesday"
     },
     {
-      "id": "id3",
-      "taskName": "Grocieries",
-      "startTime": "14:21",
-      "endTime": "14:26",
-      "date": "date3",
+      "id": "62f320a8-d8d1-44c3-ae11-8ec69d739d22",
+      "taskName": "Grocery Shopping",
+      "startTime": "10:00",
+      "endTime": "11:30",
       "isDone": false,
-      "description": "description3",
+      "description": "Buy groceries for the week",
       "dayOfWeek": "Wednesday"
     },
     {
-      "id": "3afff816-e2c9-4b3b-b72e-28dc656c7729",
-      "taskName": "Home visits",
-      "startTime": "14:31",
-      "endTime": "14:31",
+      "id": "8f5340d9-9ca3-4a12-ae0a-2dd91e0a38d7",
+      "taskName": "Meeting",
+      "startTime": "13:30",
+      "endTime": "15:00",
       "isDone": false,
-      "description": "sad",
-      "dayOfWeek": "Monday"
+      "description": "Discuss project updates",
+      "dayOfWeek": "Thursday"
     },
     {
-      "id": "3afff816-e2c9-4b3b-b72e",
-      "taskName": "Yoga",
-      "startTime": "14:29",
-      "endTime": "14:31",
+      "id": "9b1e72c0-732e-4bdc-95f2-86a15a19cde7",
+      "taskName": "Read Book",
+      "startTime": "19:00",
+      "endTime": "20:30",
       "isDone": false,
-      "description": "sad",
-      "dayOfWeek": "Monday"
-    },
-    {
-      "id": "3afff816-e2c9-4b3b-b72e-28dukc656c7729",
-      "taskName": "Ballet",
-      "startTime": "16:26",
-      "endTime": "14:31",
-      "isDone": false,
-      "description": "sad",
-      "dayOfWeek": "Monday"
-    },
-    {
-      "id": "aeee47aa-1fcf-4833-bdbb-3cc72c450192",
-      "taskName": "Tania",
-      "startTime": "21:12",
-      "endTime": "22:14",
-      "isDone": false,
-      "description": "tania tiene hambre",
-      "dayOfWeek": "Saturday"
-    },
-    {
-      "id": "a195f70e-2056-4f3b-a040-33dffd2061b1",
-      "taskName": "Prueba con Patrick",
-      "startTime": "17:22",
-      "endTime": "17:24",
-      "isDone": false,
-      "description": "xfgdfg",
+      "description": "Complete a chapter",
       "dayOfWeek": "Friday"
     },
     {
-      "id": "08b552c1-e795-454c-a054-1b32ca8f5f6f",
-      "taskName": "nana",
-      "startTime": "09:27",
-      "endTime": "09:31",
+      "id": "6c7d3ec7-f303-4b3d-99c8-7ea32c0d7f0f",
+      "taskName": "Clean House",
+      "startTime": "10:00",
+      "endTime": "12:00",
       "isDone": false,
-      "description": "vamo a ve",
+      "description": "Weekly cleaning",
+      "dayOfWeek": "Saturday"
+    },
+    {
+      "id": "d1a962bf-8d34-4f42-8121-169ce7e0c9c1",
+      "taskName": "Family Dinner",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "isDone": false,
+      "description": "Cook a special meal",
       "dayOfWeek": "Sunday"
     },
     {
-      "id": "fd3c533d-0129-4ca2-8de5-3c5ec6a812d8",
-      "taskName": "nana",
-      "startTime": "09:27",
-      "endTime": "09:31",
+      "id": "4f9b3d6d-4910-4d47-8cdd-4d39611a7752",
+      "taskName": "Work on Project",
+      "startTime": "09:00",
+      "endTime": "11:30",
       "isDone": false,
-      "description": "vamo a ve",
-      "dayOfWeek": "Sunday"
-    },
-    {
-      "id": "ee987762-bf7e-4b8e-919a-5dc3f8a06b91",
-      "taskName": "hey hey hey",
-      "startTime": "09:29",
-      "endTime": "09:34",
-      "isDone": false,
-      "description": "siuuu",
-      "dayOfWeek": "Tuesday"
-    },
-    {
-      "id": "570911ec-7b38-499e-9acd-0b39491ec10a",
-      "taskName": "Party tonight",
-      "startTime": "22:24",
-      "endTime": "04:24",
-      "isDone": false,
-      "description": "rockNroll",
-      "dayOfWeek": "Tuesday"
-    },
-    {
-      "id": "48ff19dd-966a-4346-b8bc-61f9e82aba52",
-      "taskName": "Work meet",
-      "startTime": "16:02",
-      "endTime": "16:08",
-      "isDone": false,
-      "description": "Presentacion de equipo",
-      "dayOfWeek": "Sunday"
-    },
-    {
-      "id": "3fc72e9d-98b5-495b-a71c-c8d46e48e465",
-      "taskName": "Siuuu!!",
-      "startTime": "15:34",
-      "endTime": "14:40",
-      "isDone": false,
-      "description": "Transition completed",
+      "description": "Make progress on the project",
       "dayOfWeek": "Monday"
+    },
+    {
+      "id": "a65a910a-6b21-41c9-8a2b-4e845725da74",
+      "taskName": "Doctor's Appointment",
+      "startTime": "14:15",
+      "endTime": "15:00",
+      "isDone": false,
+      "description": "Routine check-up",
+      "dayOfWeek": "Wednesday"
+    },
+    {
+      "id": "f92c8b83-61c8-4a3e-8f56-2c79c3f04e4b",
+      "taskName": "Plan Vacation",
+      "startTime": "20:00",
+      "endTime": "21:30",
+      "isDone": false,
+      "description": "Research and plan upcoming vacation",
+      "dayOfWeek": "Friday"
+    },
+    {
+      "id": "5c6e27a3-37b7-4e28-8ad0-2e9c5f1f28e5",
+      "taskName": "Study for Exam",
+      "startTime": "14:00",
+      "endTime": "16:00",
+      "isDone": false,
+      "description": "Prepare for the upcoming exam",
+      "dayOfWeek": "Monday"
+    },
+    {
+      "id": "8e7b4f5e-615f-4b6c-8c14-5b8a1f3d8a9c",
+      "taskName": "Gym Workout",
+      "startTime": "07:00",
+      "endTime": "08:00",
+      "isDone": false,
+      "description": "Morning exercise",
+      "dayOfWeek": "Tuesday"
+    },
+    {
+      "id": "9f3a6c7d-623d-4e6a-8d1a-4d5b9e8c9f3e",
+      "taskName": "Write Report",
+      "startTime": "10:30",
+      "endTime": "12:00",
+      "isDone": false,
+      "description": "Work on the project report",
+      "dayOfWeek": "Tuesday"
+    },
+    {
+      "id": "a4e5f8c9-6c7a-4d8b-9a5c-3e2d1b8f3c6d",
+      "taskName": "Shopping",
+      "startTime": "15:00",
+      "endTime": "16:30",
+      "isDone": false,
+      "description": "Buy groceries and other items",
+      "dayOfWeek": "Tuesday"
+    },
+    {
+      "id": "b3d4f6a7-6d8e-4c9b-8f1a-5e7c4a8d9f2a",
+      "taskName": "Practice Guitar",
+      "startTime": "18:00",
+      "endTime": "19:30",
+      "isDone": false,
+      "description": "Improve guitar skills",
+      "dayOfWeek": "Tuesday"
     }
   ]
 }
