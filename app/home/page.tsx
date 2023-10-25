@@ -1,11 +1,11 @@
 // import Link from "next/link"
 import DayInWeek from "../../components/DayInWeek"
 // import Modal from "../../components/ModalForm"
-import { getAllTasks } from "@/api"
+import { getTasks } from "@/api"
 import AddTask from "@/components/AddTask"
 
 const Home = async () => {
-  const tasks = await getAllTasks()
+  const tasks = await getTasks()
 
   // function getCurrentWeekNumber() {
   //   /* the week is +1( have to be fixed, this is just to know the current week, but has to be navigable to other weeks) */

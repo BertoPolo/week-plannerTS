@@ -2,12 +2,13 @@ import { ITask } from "./types"
 
 const baseURL = "http://localhost:3001/"
 
-export const getAllTasks = async (): Promise<ITask[]> => {
+export const getTasks = async (filter?: string): Promise<ITask[]> => {
   try {
     const res = await fetch(`${baseURL}tasks`, { cache: "no-store" }) // super important this " cache = "no-store", or your data will not be dynamic and will not change!
     if (res.ok) {
       const tasks = await res.json()
-      return tasks
+      if (filter) return tasks.filter((task: ITask) => task.dayOfWeek === filter)
+      else return tasks
     }
   } catch (error) {
     console.log(error)

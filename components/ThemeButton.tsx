@@ -18,7 +18,7 @@ const ThemeButton = () => {
     <div className="ml-3">
       <label className="swap swap-rotate">
         {/* this hidden checkbox controls the state */}
-        <input type="checkbox" checked={theme != "dark"} />
+        <input type="checkbox" checked={theme != "dark"} readOnly />
 
         {/* sun icon */}
         <svg onClick={() => setTheme("light")} className="swap-on fill-current w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
