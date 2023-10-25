@@ -5,6 +5,16 @@ import { getTasks } from "@/api"
 const SingleDay = async ({ params }: Params) => {
   const tasks = await getTasks(params.day)
 
+  tasks.sort((a, b) => {
+    if (a.startTime < b.startTime) {
+      return -1
+    }
+    if (a.startTime > b.startTime) {
+      return 1
+    }
+    return 0
+  })
+
   return (
     <div className="overflow-x-auto">
       <table className="table table-sm">
@@ -18,27 +28,16 @@ const SingleDay = async ({ params }: Params) => {
           </tr>
         </thead>
         <tbody>
-          {/* row 1 */}
-          <tr className="hover">
-            <td>14:35</td>
-            <td>Go to the pool</td>
-            <td>Take the helmet and gloves for the bike</td>
-            <td>15:35</td>
-          </tr>
-          {/* row 2 */}
-          <tr className="hover">
-            <th>2</th>
-            <td>Hart Hagerty</td>
-            <td>Desktop Support Technician</td>
-            <td>Purple</td>
-          </tr>
-          {/* row 3 */}
-          <tr className="hover">
-            <th>3</th>
-            <td>Brice Swyre</td>
-            <td>Tax Accountant</td>
-            <td>Red</td>
-          </tr>
+          {tasks.map((task) => {
+            return (
+              <tr className="hover" key={task.id}>
+                <td>{task.startTime}</td>
+                <td>{task.taskName}</td>
+                <td>{task.description}</td>
+                <td>{task.endTime}</td>
+              </tr>
+            )
+          })}
         </tbody>
       </table>
     </div>

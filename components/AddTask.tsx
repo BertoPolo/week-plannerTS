@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from "uuid"
 import React, { FormEventHandler, useState } from "react"
 import { createTask } from "@/api"
 import { useRouter } from "next/navigation"
+import { ITask } from "@/types"
 
 const AddTask = () => {
   const [newTaskNameValue, setNewTaskNameValue] = useState<string>("")
@@ -10,7 +11,7 @@ const AddTask = () => {
   const [newStartTimeValue, setNewStartTimeValue] = useState<string>("")
   const [newEndTimeValue, setNewEndTimeValue] = useState<string>("")
   const [newDescriptionValue, setNewDescriptionValue] = useState<string>("")
-  const [newDayOfWeekValue, setNewnewDayOfWeekValue] = useState<any>("Monday") // solve this ANY type
+  const [newDayOfWeekValue, setNewnewDayOfWeekValue] = useState<ITask["dayOfWeek"]>("Monday")
 
   const router = useRouter()
   const resetStates = () => {

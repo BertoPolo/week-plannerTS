@@ -7,7 +7,7 @@ export const getTasks = async (filter?: string): Promise<ITask[]> => {
     const res = await fetch(`${baseURL}tasks`, { cache: "no-store" }) // super important this " cache = "no-store", or your data will not be dynamic and will not change!
     if (res.ok) {
       const tasks = await res.json()
-      if (filter) return tasks.filter((task: ITask) => task.dayOfWeek === filter)
+      if (filter) return tasks.filter((task: ITask) => task.dayOfWeek === filter) //add a sorting by start time
       else return tasks
     }
   } catch (error) {
