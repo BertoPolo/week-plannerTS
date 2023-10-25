@@ -19,6 +19,8 @@ const SingleDay = async ({ params }: Params) => {
   }
   return (
     <>
+      <h1>{params.day}</h1>
+      {/* change h1 for pagination ui */}
       <div className="overflow-x-auto">
         <table className="table table-sm">
           {/* head */}
