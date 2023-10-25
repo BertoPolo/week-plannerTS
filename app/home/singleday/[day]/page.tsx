@@ -8,19 +8,22 @@ const SingleDay = async ({ params }: Params) => {
   //   sorting by startTime
   if (tasks.length > 0) {
     tasks.sort((a, b) => {
-      if (a.startTime < b.startTime) {
-        return -1
-      }
-      if (a.startTime > b.startTime) {
-        return 1
-      }
+      if (a.startTime < b.startTime) return -1
+      if (a.startTime > b.startTime) return 1
+
       return 0
     })
   }
+
   return (
     <>
-      <h1>{params.day}</h1>
-      {/* change h1 for pagination ui */}
+      <div className="join">
+        <button className="join-item btn btn-sm">1</button>
+        <button className="join-item btn btn-sm">2 </button>
+        <button className="join-item btn btn-sm btn-active">{params.day}</button>
+        <button className="join-item btn btn-sm">4</button>
+        <button className="join-item btn btn-sm">5</button>
+      </div>
       <div className="overflow-x-auto">
         <table className="table table-sm">
           {/* head */}
