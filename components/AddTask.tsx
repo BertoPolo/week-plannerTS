@@ -36,6 +36,10 @@ const AddTask = () => {
       description: newDescriptionValue,
       dayOfWeek: newDayOfWeekValue,
     })
+    const modalCheckbox = document.getElementById("AddTaskModal") as HTMLInputElement | null
+    if (modalCheckbox) {
+      modalCheckbox.checked = false
+    }
     resetStates()
     //refreshing
     router.refresh()
@@ -52,7 +56,7 @@ const AddTask = () => {
       <div className="modal">
         <div className="modal-box">
           <h3 className="text-lg font-bold mb-4">Add your task!</h3>
-          <form onSubmit={handleNewTaskForm}>
+          <form onSubmit={handleNewTaskForm} onAbort={resetStates}>
             <input
               type="text"
               value={newTaskNameValue}

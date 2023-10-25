@@ -51,6 +51,12 @@ const Task = ({ tasks, weekDay }: TaskProps) => {
       description: selectedDescription,
       dayOfWeek: selectedDayOfWeek,
     })
+
+    const modalCheckbox = document.getElementById("EditTaskModal") as HTMLInputElement | null
+    if (modalCheckbox) {
+      modalCheckbox.checked = false
+    }
+
     resetStates()
     //refreshing
     router.refresh()
@@ -84,7 +90,7 @@ const Task = ({ tasks, weekDay }: TaskProps) => {
                         {task.taskName}
                       </b>
                       {/* icons EDIT and DELETE */}
-                      <span className="flex ">
+                      <span className="flex">
                         <label htmlFor="EditTaskModal">
                           <FiEdit size={15} className="cursor-pointer text-blue-400 mx-3" onClick={() => changeStates(task)} />
                         </label>
@@ -100,9 +106,9 @@ const Task = ({ tasks, weekDay }: TaskProps) => {
                         </label>
                       </span>
                     </p>
-
-                    {/* display Description */}
                   </div>
+
+                  {/* display Description */}
                   {isDescription && <small>{task.id === selectedId && task.description}</small>}
                 </div>
               )}
@@ -116,7 +122,8 @@ const Task = ({ tasks, weekDay }: TaskProps) => {
         <div className="modal">
           <div className="modal-box">
             <h3 className="text-lg font-bold mb-4">Let`s modify your task</h3>
-            <form onSubmit={handleEditTaskForm}>
+
+            <form onSubmit={handleEditTaskForm} onAbort={resetStates}>
               <input
                 type="text"
                 value={selectedTaskName}
@@ -126,7 +133,6 @@ const Task = ({ tasks, weekDay }: TaskProps) => {
                 className="block"
                 required
               />
-              {/* <input type="date" value={newDateValue} onChange={(e) => setNewDateValue(e.target.value)} title="Date" className="block" /> */}
 
               {/* weekday dropdown */}
               <div className="dropdown dropdown-right">
