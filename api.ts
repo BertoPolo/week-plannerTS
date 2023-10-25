@@ -54,20 +54,12 @@ export const modifyTask = async (task: ITask): Promise<ITask> => {
 }
 
 //not yet in use nor ready
-export const deleteTask = async (task: ITask): Promise<ITask> => {
+export const deleteTask = async (id: string): Promise<void> => {
   try {
-    const res = await fetch(`${baseURL}tasks/${task.id}`, {
+    await fetch(`${baseURL}tasks/${id}`, {
       method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-
-      body: JSON.stringify(task),
     })
-    if (res.ok) {
-      const updatedTask = await res.json()
-      return updatedTask
-    }
+    return
   } catch (error) {
     console.log(error)
   }

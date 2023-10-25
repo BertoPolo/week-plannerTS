@@ -56,19 +56,8 @@ const Task = ({ tasks, weekDay }: TaskProps) => {
     router.refresh()
   }
 
-  const handleDeleteTaskForm: FormEventHandler<HTMLFormElement> = async (e) => {
-    e.preventDefault()
-
-    // await deleteTask({
-    //   id: selectedId,
-    //   taskName: selectedTaskName,
-    //   startTime: selectedStartTime,
-    //   endTime: selectedEndTime,
-    //   // date: newDateValue,
-    //   isDone: false,
-    //   description: selectedDescription,
-    //   dayOfWeek: selectedDayOfWeek,
-    // })
+  const handleDeleteTask = async (id: string) => {
+    await deleteTask(id)
     resetStates()
     //refreshing
     router.refresh()
@@ -104,8 +93,8 @@ const Task = ({ tasks, weekDay }: TaskProps) => {
                           <ImBin
                             size={15}
                             className="cursor-pointer text-red-600"
-                            onClick={(e: any) => {
-                              confirm("Are you sure to delete this") ? handleDeleteTaskForm(e) : console.log("Task not deleted")
+                            onClick={() => {
+                              confirm("Are you sure to delete this") ? handleDeleteTask(task.id) : console.log("Task not deleted")
                             }}
                           />
                         </label>
