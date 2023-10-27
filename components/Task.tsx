@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation"
 import { ITask } from "@/types"
 import { FiEdit } from "react-icons/fi"
 import { ImBin } from "react-icons/im"
+// import { initialState, reducer } from "./States"
 
 // const Task = ({ tasks, weekDay }: TaskProps) => {
 const Task: React.FC<{ tasks: ITask[]; weekDay: string }> = ({ tasks, weekDay }) => {
