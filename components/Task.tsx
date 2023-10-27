@@ -2,7 +2,7 @@
 import React, { FormEventHandler, useState } from "react"
 import { deleteTask, modifyTask } from "@/api"
 import { useRouter } from "next/navigation"
-import { TaskProps, ITask } from "@/types"
+import { ITask } from "@/types"
 import { FiEdit } from "react-icons/fi"
 import { ImBin } from "react-icons/im"
 
@@ -217,7 +217,6 @@ const Task: React.FC<{ tasks: ITask[]; weekDay: string }> = ({ tasks, weekDay })
                 onChange={(e) => setSelectedDescription(e.target.value)}
                 title="Description"
                 placeholder="Insert description"
-                required
               />
 
               <button type="submit" className="btn block">
