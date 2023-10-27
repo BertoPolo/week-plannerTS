@@ -6,17 +6,19 @@ import { TaskProps, ITask } from "@/types"
 import { FiEdit } from "react-icons/fi"
 import { ImBin } from "react-icons/im"
 
-const Task = ({ tasks, weekDay }: TaskProps) => {
+// const Task = ({ tasks, weekDay }: TaskProps) => {
+const Task: React.FC<{ tasks: ITask[]; weekDay: string }> = ({ tasks, weekDay }) => {
   //
   const [isDescription, setIsDescription] = useState<boolean>(false) //enables description mode
+  const [isEditTaskModalOpen, setIsEditTaskModalOpen] = useState(false)
 
   const [selectedId, setSelectedId] = useState<string>("")
   const [selectedTaskName, setSelectedTaskName] = useState<string>("")
-  // const [newDateValue, setNewDateValue] = useState<string>("")
   const [selectedStartTime, setSelectedStartTime] = useState<string>("")
   const [selectedEndTime, setSelectedEndTime] = useState<string>("")
   const [selectedDescription, setSelectedDescription] = useState<string>("")
   const [selectedDayOfWeek, setSelectedDayOfWeek] = useState<ITask["dayOfWeek"]>("Monday")
+  // const [newDateValue, setNewDateValue] = useState<string>("")
 
   const router = useRouter()
 
@@ -40,31 +42,41 @@ const Task = ({ tasks, weekDay }: TaskProps) => {
 
   const handleEditTaskForm: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault()
+    try {
+      await modifyTask({
+        id: selectedId,
+        taskName: selectedTaskName,
+        startTime: selectedStartTime,
+        endTime: selectedEndTime,
+        // date: newDateValue,
+        isDone: false,
+        description: selectedDescription,
+        dayOfWeek: selectedDayOfWeek,
+      })
+      // closing the modal after submission
+      // const modalCheckbox = document.getElementById("EditTaskModal") as HTMLInputElement | null
+      // if (modalCheckbox) modalCheckbox.checked = false
+      setIsEditTaskModalOpen(false)
 
-    await modifyTask({
-      id: selectedId,
-      taskName: selectedTaskName,
-      startTime: selectedStartTime,
-      endTime: selectedEndTime,
-      // date: newDateValue,
-      isDone: false,
-      description: selectedDescription,
-      dayOfWeek: selectedDayOfWeek,
-    })
-    // closing the modal after submission
-    const modalCheckbox = document.getElementById("EditTaskModal") as HTMLInputElement | null
-    if (modalCheckbox) modalCheckbox.checked = false
-
-    resetStates()
-    //refreshing
-    router.refresh()
+      resetStates()
+      //refreshing
+      router.refresh()
+    } catch (error) {
+      // display an error message to the user. with toast message for example
+      console.error("Error editing task:", error)
+    }
   }
 
   const handleDeleteTask = async (id: string) => {
-    await deleteTask(id)
-    resetStates()
-    //refreshing
-    router.refresh()
+    try {
+      await deleteTask(id)
+      resetStates()
+      //refreshing
+      router.refresh()
+    } catch (error) {
+      // display an error message to the user. with toast message for example
+      console.error("Error deleting task:", error)
+    }
   }
 
   return (
@@ -76,9 +88,12 @@ const Task = ({ tasks, weekDay }: TaskProps) => {
             <div key={task.id}>
               {task.dayOfWeek === weekDay && (
                 <div>
+                  {/* split name in 4 columns */}
                   <div className="grid grid-cols-4 mt-2">
                     <small className="text-xs">{task.startTime}</small>
                     <p className="flex col-span-3">
+                      {/* in truncate case, appear a tooltip */}
+                      {/* <span className="tooltip" data-tip={task.taskName}> */}
                       <b
                         className="cursor-pointer truncate "
                         onClick={() => {
@@ -87,6 +102,7 @@ const Task = ({ tasks, weekDay }: TaskProps) => {
                       >
                         {task.taskName}
                       </b>
+                      {/* </span> */}
                       {/* icons EDIT and DELETE */}
                       <span className="flex">
                         <label htmlFor="EditTaskModal">
@@ -116,7 +132,13 @@ const Task = ({ tasks, weekDay }: TaskProps) => {
 
       {/*  Editing task form / modal*/}
       <>
-        <input type="checkbox" id="EditTaskModal" className="modal-toggle" />
+        <input
+          type="checkbox"
+          id="EditTaskModal"
+          onClick={() => setIsEditTaskModalOpen(!isEditTaskModalOpen)}
+          checked={isEditTaskModalOpen}
+          className="modal-toggle"
+        />
         <div className="modal">
           <div className="modal-box">
             <h3 className="text-lg font-bold mb-4">Let`s modify your task</h3>
