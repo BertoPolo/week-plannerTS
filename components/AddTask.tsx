@@ -6,6 +6,8 @@ import { useRouter } from "next/navigation"
 import { ITask } from "@/types"
 
 const AddTask = () => {
+  const [isEditTaskModalOpen, setIsEditTaskModalOpen] = useState(false)
+
   const [newTaskNameValue, setNewTaskNameValue] = useState<string>("")
   // const [newDateValue, setNewDateValue] = useState<string>("")
   const [newStartTimeValue, setNewStartTimeValue] = useState<string>("")
@@ -25,24 +27,29 @@ const AddTask = () => {
 
   const handleNewTaskForm: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault()
+    try {
+      await createTask({
+        id: uuidv4(),
+        taskName: newTaskNameValue,
+        startTime: newStartTimeValue,
+        endTime: newEndTimeValue,
+        // date: newDateValue,
+        isDone: false,
+        description: newDescriptionValue,
+        dayOfWeek: newDayOfWeekValue,
+      })
 
-    await createTask({
-      id: uuidv4(),
-      taskName: newTaskNameValue,
-      startTime: newStartTimeValue,
-      endTime: newEndTimeValue,
-      // date: newDateValue,
-      isDone: false,
-      description: newDescriptionValue,
-      dayOfWeek: newDayOfWeekValue,
-    })
-
-    // closing the modal after submission
-    const modalCheckbox = document.getElementById("AddTaskModal") as HTMLInputElement | null
-    if (modalCheckbox) modalCheckbox.checked = false
-    resetStates()
-    //refreshing
-    router.refresh()
+      // closing the modal after submission
+      // const modalCheckbox = document.getElementById("AddTaskModal") as HTMLInputElement | null
+      // if (modalCheckbox) modalCheckbox.checked = false
+      setIsEditTaskModalOpen(false)
+      resetStates()
+      //refreshing
+      router.refresh()
+    } catch (error) {
+      // display an error message to the user. with toast message for example
+      console.error("Error creating task:", error)
+    }
   }
 
   return (
@@ -52,7 +59,13 @@ const AddTask = () => {
         Add task
       </label>
 
-      <input type="checkbox" id="AddTaskModal" className="modal-toggle" />
+      <input
+        type="checkbox"
+        onClick={() => setIsEditTaskModalOpen(!isEditTaskModalOpen)}
+        checked={isEditTaskModalOpen}
+        id="AddTaskModal"
+        className="modal-toggle"
+      />
       <div className="modal">
         <div className="modal-box">
           <h3 className="text-lg font-bold mb-4">Add your task!</h3>
