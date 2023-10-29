@@ -26,7 +26,7 @@ const AddTask = () => {
       })
 
       // Close the modal after submission
-      dispatch({ type: "closeModal" })
+      dispatch({ type: "closeEditModal" })
       dispatch({ type: "reset" })
 
       // Refreshing
@@ -46,7 +46,7 @@ const AddTask = () => {
 
       <input
         type="checkbox"
-        onClick={() => dispatch({ type: "openModal" })}
+        onClick={() => dispatch({ type: "openEditModal" })}
         checked={state.isEditTaskModalOpen}
         id="AddTaskModal"
         className="modal-toggle"
@@ -54,7 +54,12 @@ const AddTask = () => {
       <div className="modal">
         <div className="modal-box">
           <h3 className="text-lg font-bold mb-4">Add your task!</h3>
-          <form onSubmit={handleNewTaskForm} onAbort={() => dispatch({ type: "reset" })}>
+          <form
+            onSubmit={handleNewTaskForm}
+            onAbort={() => {
+              dispatch({ type: "reset" }), dispatch({ type: "closeEditModal" })
+            }}
+          >
             <input
               type="text"
               value={state.newTaskNameValue}
@@ -122,6 +127,7 @@ const AddTask = () => {
             </button>
           </form>
         </div>
+
         <label className="modal-backdrop" htmlFor="AddTaskModal">
           Close
         </label>

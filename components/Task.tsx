@@ -138,6 +138,7 @@ const Task: React.FC<{ tasks: ITask[]; weekDay: string }> = ({ tasks, weekDay })
           id="EditTaskModal"
           onClick={() => setIsEditTaskModalOpen(!isEditTaskModalOpen)}
           checked={isEditTaskModalOpen}
+          readOnly
           className="modal-toggle"
         />
         <div className="modal">

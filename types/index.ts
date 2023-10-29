@@ -14,6 +14,26 @@ export interface TaskProps {
   tasks: Array<ITask>
   weekDay?: string
 }
+
+export interface State {
+  isEditTaskModalOpen: boolean
+  newTaskNameValue: string
+  newStartTimeValue: string
+  newEndTimeValue: string
+  newDescriptionValue: string
+  newDayOfWeekValue: ITask["dayOfWeek"]
+}
+
+export type Action =
+  | { type: "openEditModal" }
+  | { type: "closeEditModal" }
+  | { type: "updateTaskName"; payload: string }
+  | { type: "updateStartTime"; payload: string }
+  | { type: "updateEndTime"; payload: string }
+  | { type: "updateDescription"; payload: string }
+  | { type: "updateDayOfWeek"; payload: ITask["dayOfWeek"] }
+  | { type: "reset" }
+
 // not used with server approach
 // export interface InputLabelProps {
 //   type: "text" | "email" | "password" | "textarea" | "date" | "time" // type of input

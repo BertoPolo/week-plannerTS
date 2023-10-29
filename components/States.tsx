@@ -1,3 +1,5 @@
+import { State, Action } from "@/types"
+
 export const initialState = {
   isEditTaskModalOpen: false,
   newTaskNameValue: "",
@@ -8,11 +10,10 @@ export const initialState = {
 }
 
 export const reducer = (state: any, action: any) => {
-  // change any types
   switch (action.type) {
-    case "openModal":
+    case "openEditModal":
       return { ...state, isEditTaskModalOpen: true }
-    case "closeModal":
+    case "closeEditModal":
       return { ...state, isEditTaskModalOpen: false }
     case "updateTaskName":
       return { ...state, newTaskNameValue: action.payload }
