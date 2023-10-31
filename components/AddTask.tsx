@@ -8,6 +8,7 @@ import { initialState, reducer, daysOfWeek } from "./States"
 
 const AddTask = () => {
   const [state, dispatch] = useReducer(reducer, initialState)
+  const [isAddTaskModalOpen, setIsAddTaskModalOpen] = useState<boolean>(false)
 
   const router = useRouter()
 
@@ -26,14 +27,15 @@ const AddTask = () => {
       })
 
       // Close the modal after submission
-      dispatch({ type: "closeEditModal" })
+      // dispatch({ type: "closeAddTaskModal" })
+      setIsAddTaskModalOpen(false)
       dispatch({ type: "reset" })
 
       // Refreshing
       router.refresh()
     } catch (error) {
       // Display an error message to the user, e.g., with a toast message
-      console.error("Error creating task:", error)
+      console.error("Error at creating task:", error)
     }
   }
 
@@ -46,8 +48,9 @@ const AddTask = () => {
 
       <input
         type="checkbox"
-        onClick={() => dispatch({ type: "openEditModal" })}
-        checked={state.isEditTaskModalOpen}
+        onClick={() => setIsAddTaskModalOpen(!isAddTaskModalOpen)}
+        checked={isAddTaskModalOpen}
+        readOnly
         id="AddTaskModal"
         className="modal-toggle"
       />
@@ -57,7 +60,7 @@ const AddTask = () => {
           <form
             onSubmit={handleNewTaskForm}
             onAbort={() => {
-              dispatch({ type: "reset" }), dispatch({ type: "closeEditModal" })
+              dispatch({ type: "reset" }), setIsAddTaskModalOpen(false)
             }}
           >
             <input
@@ -81,6 +84,7 @@ const AddTask = () => {
                 {daysOfWeek.map((day) => (
                   <li key={day}>
                     <p onClick={() => dispatch({ type: "updateDayOfWeek", payload: day })}>{day}</p>
+                    {/* <p onClick={() => console.log(day)}>{day}</p> */}
                   </li>
                 ))}
               </ul>

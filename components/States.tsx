@@ -2,6 +2,7 @@ import { State, Action } from "@/types"
 
 export const initialState = {
   isEditTaskModalOpen: false,
+  isAddTaskModalOpen: false,
   newTaskNameValue: "",
   newStartTimeValue: "",
   newEndTimeValue: "",
@@ -9,12 +10,16 @@ export const initialState = {
   newDayOfWeekValue: "Monday",
 }
 
-export const reducer = (state: any, action: any) => {
+export const reducer = (state: any, action: Action) => {
   switch (action.type) {
-    case "openEditModal":
-      return { ...state, isEditTaskModalOpen: true }
-    case "closeEditModal":
-      return { ...state, isEditTaskModalOpen: false }
+    // case "openAddTaskModal":
+    //   return { ...state, isAddTaskModalOpen: true }
+    // case "closeAddTaskModal":
+    //   return { ...state, isAddTaskModalOpen: false }
+    // case "openEditModal":
+    //   return { ...state, isEditTaskModalOpen: true }
+    // case "closeEditModal":
+    //   return { ...state, isEditTaskModalOpen: false }
     case "updateTaskName":
       return { ...state, newTaskNameValue: action.payload }
     case "updateStartTime":

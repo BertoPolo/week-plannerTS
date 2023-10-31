@@ -16,7 +16,8 @@ export interface TaskProps {
 }
 
 export interface State {
-  isEditTaskModalOpen: boolean
+  // isEditTaskModalOpen: boolean
+  // isAddTaskModalOpen: boolean
   newTaskNameValue: string
   newStartTimeValue: string
   newEndTimeValue: string
@@ -25,13 +26,16 @@ export interface State {
 }
 
 export type Action =
-  | { type: "openEditModal" }
-  | { type: "closeEditModal" }
+  // | { type: "openEditModal" }
+  // | { type: "closeEditModal" }
+  // | { type: "openAddTaskModal" }
+  // | { type: "closeAddTaskModal" }
   | { type: "updateTaskName"; payload: string }
   | { type: "updateStartTime"; payload: string }
   | { type: "updateEndTime"; payload: string }
   | { type: "updateDescription"; payload: string }
-  | { type: "updateDayOfWeek"; payload: ITask["dayOfWeek"] }
+  | { type: "updateDayOfWeek"; payload: string }
+  //| { type: "updateDayOfWeek"; payload: ITask["dayOfWeek"]}
   | { type: "reset" }
 
 // not used with server approach
