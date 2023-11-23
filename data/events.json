@@ -1,15 +1,6 @@
 {
   "tasks": [
     {
-      "id": "4a6e889c-532e-4b9d-9b29-761fcdcf19e1",
-      "taskName": "Workout",
-      "startTime": "07:00",
-      "endTime": "08:00",
-      "isDone": false,
-      "description": "Morning exercise",
-      "dayOfWeek": "Tuesday"
-    },
-    {
       "id": "62f320a8-d8d1-44c3-ae11-8ec69d739d22",
       "taskName": "Grocery Shopping",
       "startTime": "10:00",
@@ -127,9 +118,18 @@
       "dayOfWeek": "Tuesday"
     },
     {
-      "id": "5bbf78c4-08db-481c-a934-fee0b5e82b87",
-      "taskName": "Play games",
-      "startTime": "21:16",
+      "id": "5bbasd8c4-08db-481c-a934-fee0b5e82b87",
+      "taskName": "Swimming Pool",
+      "startTime": "21:11",
+      "endTime": "21:21",
+      "isDone": false,
+      "description": "asd",
+      "dayOfWeek": "Tuesday"
+    },
+    {
+      "id": "5bbasd8c4-08db-331c-a934-fee0b5e82b87",
+      "taskName": "Dentist",
+      "startTime": "21:10",
       "endTime": "21:21",
       "isDone": false,
       "description": "asd",
