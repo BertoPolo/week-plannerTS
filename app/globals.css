@@ -12,3 +12,7 @@ body {
   color: white;
   background-color: black;
 }
+
+.card {
+  min-height: 50vh;
+}

@@ -125,6 +125,15 @@
       "isDone": false,
       "description": "Improve guitar skills",
       "dayOfWeek": "Tuesday"
+    },
+    {
+      "id": "5bbf78c4-08db-481c-a934-fee0b5e82b87",
+      "taskName": "Play games",
+      "startTime": "21:16",
+      "endTime": "21:21",
+      "isDone": false,
+      "description": "asd",
+      "dayOfWeek": "Tuesday"
     }
   ]
 }

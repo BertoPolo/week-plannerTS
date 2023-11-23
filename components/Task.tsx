@@ -56,8 +56,6 @@ const Task: React.FC<{ tasks: ITask[]; weekDay: string }> = ({ tasks, weekDay })
         dayOfWeek: selectedDayOfWeek,
       })
       // closing the modal after submission
-      // const modalCheckbox = document.getElementById("EditTaskModal") as HTMLInputElement | null
-      // if (modalCheckbox) modalCheckbox.checked = false
       setIsEditTaskModalOpen(false)
 
       resetStates()

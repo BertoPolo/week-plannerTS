@@ -29,7 +29,7 @@ const DayInWeek = ({ tasks }: TaskProps) => {
         {/*  */}
         {displayDays.map((weekDay) => {
           return (
-            <div className="card sm:w-auto bg-neutral text-neutral-content h-screen" key={weekDay}>
+            <div className="card sm:w-auto bg-neutral text-neutral-content " key={weekDay}>
               <div className="card-body p-3">
                 <h2 className="card-title cursor-pointer">
                   <Link href={`/home/singleday/${weekDay}`} className="text-primary">
