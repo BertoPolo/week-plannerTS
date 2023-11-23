@@ -5,7 +5,7 @@ import Task from "./Task"
 import Link from "next/link"
 
 const DayInWeek = ({ tasks }: TaskProps) => {
-  const [isDescription, setIsDescription] = useState<boolean>(false) //enables description mode
+  // const [isDescription, setIsDescription] = useState<boolean>(false) //enables description mode
   const [wantWeekends, setWantWeekends] = useState<boolean>(false)
 
   let displayDays = wantWeekends

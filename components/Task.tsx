@@ -39,6 +39,7 @@ const Task: React.FC<{ tasks: ITask[]; weekDay: string }> = ({ tasks, weekDay })
     setSelectedEndTime(valuesObj.endTime)
     setSelectedDescription(valuesObj.description)
     setSelectedDayOfWeek(valuesObj.dayOfWeek)
+    setIsEditTaskModalOpen(true)
   }
 
   const handleEditTaskForm: FormEventHandler<HTMLFormElement> = async (e) => {
@@ -60,7 +61,6 @@ const Task: React.FC<{ tasks: ITask[]; weekDay: string }> = ({ tasks, weekDay })
       setIsEditTaskModalOpen(false)
 
       resetStates()
-      //refreshing
       router.refresh()
     } catch (error) {
       // display an error message to the user. with toast message for example
@@ -104,6 +104,7 @@ const Task: React.FC<{ tasks: ITask[]; weekDay: string }> = ({ tasks, weekDay })
                         {task.taskName}
                       </b>
                       {/* </span> */}
+
                       {/* icons EDIT and DELETE */}
                       <span className="flex">
                         <label htmlFor="EditTaskModal">
@@ -133,16 +134,10 @@ const Task: React.FC<{ tasks: ITask[]; weekDay: string }> = ({ tasks, weekDay })
 
       {/*  Editing task form / modal*/}
       <>
-        <input
-          type="checkbox"
-          id="EditTaskModal"
-          onClick={() => setIsEditTaskModalOpen(!isEditTaskModalOpen)}
-          checked={isEditTaskModalOpen}
-          readOnly
-          className="modal-toggle"
-        />
-        <div className="modal">
-          <div className="modal-box">
+        <input type="checkbox" id="EditTaskModal" checked={isEditTaskModalOpen} readOnly className="modal-toggle" />
+
+        <div className="modal" onClick={() => setIsEditTaskModalOpen(false)}>
+          <div className="modal-box" onClick={(e) => e.stopPropagation()}>
             <h3 className="text-lg font-bold mb-4">Let`s modify your task</h3>
 
             <form onSubmit={handleEditTaskForm} onAbort={resetStates}>
