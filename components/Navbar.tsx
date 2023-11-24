@@ -4,7 +4,7 @@ import ThemeButton from "@/components/ThemeButton"
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-green-200	 mb-4 px-5">
+    <div className="navbar mb-4 px-5">
       {/* <div className="flex-1 mx-2"> */}
       <div className="flex-1">
         <Link href="/" className="mr-2">

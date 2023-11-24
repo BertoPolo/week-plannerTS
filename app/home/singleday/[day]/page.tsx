@@ -18,7 +18,7 @@ const SingleDay = async ({ params }: Params) => {
   return (
     <>
       <div className="join flex justify-center">
-        {/* if params.day   add class btn-active */}
+        {/* if params.day   add class btn-active / glass */}
         <button className="join-item btn btn-sm">Monday</button>
         <button className="join-item btn btn-sm ">Tuesday </button>
         <button className="join-item btn btn-sm btn-active">Wednesday</button>

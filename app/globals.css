@@ -4,13 +4,22 @@
 
 body {
   color: black;
-  background-color: rgb(165, 212, 165);
+  background-color: #9ad0c2;
   font-family: "Times New Roman", Times, serif;
+}
+.navbar {
+  background-color: #ecf4d6;
+}
+.footer {
+  background-color: #265073;
 }
 
 [data-theme="dark"] body {
   color: white;
   background-color: black;
+}
+[data-theme="dark"] .navbar {
+  background-color: #1ee61e;
 }
 
 .card {
