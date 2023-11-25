@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+}
+
 body {
   color: black;
   background-color: #9ad0c2;

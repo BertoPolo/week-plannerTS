@@ -15,18 +15,18 @@ const SingleDay = async ({ params }: Params) => {
     })
   }
 
+  let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+
   return (
     <>
       <div className="join flex justify-center">
-        {/* if params.day   add class btn-active / glass */}
-        <button className="join-item btn btn-sm">Monday</button>
-        <button className="join-item btn btn-sm ">Tuesday </button>
-        <button className="join-item btn btn-sm btn-active">Wednesday</button>
-        <button className="join-item btn btn-sm">Thursday</button>
-        <button className="join-item btn btn-sm">Friday</button>
-        <button className="join-item btn btn-sm">Saturday</button>
-        <button className="join-item btn btn-sm">Sunday</button>
+        {days.map((day) => (
+          <button key={day} className={`join-item btn btn-sm ${params.day === day ? "glass" : ""}`}>
+            {day}
+          </button>
+        ))}
       </div>
+
       <div className="overflow-x-auto">
         <table className="table table-sm">
           {/* head */}
