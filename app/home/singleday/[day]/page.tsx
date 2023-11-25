@@ -1,19 +1,31 @@
-import { Params } from "next/dist/shared/lib/router/utils/route-matcher"
-import React from "react"
+"use client"
+import React, { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
+import Link from "next/link"
 import { getTasks } from "@/api"
 
-const SingleDay = async ({ params }: Params) => {
-  const tasks = await getTasks(params.day)
+// const SingleDay = async ({ params }: Params) => {
+// const tasks = await getTasks(params.day)
+const SingleDay = () => {
+  const [tasks, setTasks] = useState([])
 
-  //   sorting by startTime
-  if (tasks.length > 0) {
-    tasks.sort((a, b) => {
-      if (a.startTime < b.startTime) return -1
-      if (a.startTime > b.startTime) return 1
+  const params = useParams()
 
-      return 0
-    })
-  }
+  useEffect(() => {
+    const fetchTasks = async () => {
+      try {
+        const fetchedTasks = await getTasks(params.day)
+        if (fetchedTasks.length > 0) {
+          fetchedTasks.sort((a, b) => (a.startTime < b.startTime ? -1 : a.startTime > b.startTime ? 1 : 0))
+        }
+        setTasks(fetchedTasks)
+      } catch (error) {
+        console.error("Error fetching tasks:", error)
+      }
+    }
+
+    fetchTasks()
+  }, [params.day])
 
   let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
@@ -22,7 +34,7 @@ const SingleDay = async ({ params }: Params) => {
       <div className="join flex justify-center">
         {days.map((day) => (
           <button key={day} className={`join-item btn btn-sm ${params.day === day ? "glass" : ""}`}>
-            {day}
+            <Link href={`/home/singleday/${day}`}>{day}</Link>
           </button>
         ))}
       </div>
