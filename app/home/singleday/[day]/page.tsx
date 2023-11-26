@@ -3,9 +3,10 @@ import React, { useEffect, useState } from "react"
 import Link from "next/link"
 import { getTasks } from "@/api"
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher"
+import { ITask } from "@/types"
 
 const SingleDay = ({ params }: Params) => {
-  const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useState<ITask[]>([])
 
   useEffect(() => {
     const fetchTasks = async () => {
