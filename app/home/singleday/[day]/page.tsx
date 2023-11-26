@@ -1,15 +1,11 @@
 "use client"
 import React, { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
 import Link from "next/link"
 import { getTasks } from "@/api"
+import { Params } from "next/dist/shared/lib/router/utils/route-matcher"
 
-// const SingleDay = async ({ params }: Params) => {
-// const tasks = await getTasks(params.day)
-const SingleDay = () => {
+const SingleDay = ({ params }: Params) => {
   const [tasks, setTasks] = useState([])
-
-  const params = useParams()
 
   useEffect(() => {
     const fetchTasks = async () => {
