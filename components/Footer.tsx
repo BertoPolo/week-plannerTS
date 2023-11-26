@@ -13,7 +13,9 @@ const Footer = () => {
             <FaConnectdevelop />
           </span>
           <p>
-            Alberto Polo
+            <a className="link link-hover" target="_blank" rel="noopener noreferrer" href="https://alberto.menorca.net/">
+              Alberto Polo
+            </a>
             <br />
             NextJs Developer
           </p>
